@@ -18,7 +18,7 @@ class Ball {
     r = 40;
   }
 
-  void display() {
+  void display() { // tegner bold
     stroke(255);
     strokeWeight(3);
     fill(1);
@@ -26,12 +26,18 @@ class Ball {
     strokeWeight(1);
   }
 
-  void update() {
+  void update() { // opdaterer position på bold
     
+    if(pos.y <= height-height/5){
     acc.add(gra);
     vel.add(acc);
     vel.limit(10);
     pos.add(vel);
+    } else{
+      
+      acc.sub(gra);
+      println("bruh");
+    }
     
     
   }

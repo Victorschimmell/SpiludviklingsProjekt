@@ -22,7 +22,7 @@ Ball ball = new Ball();
 void setup() {
 
   ///////////////////Basic///////////////////
-  fullScreen(P3D);
+  size(1000,1000,P3D);
   frameRate(240);
   smooth();
   textAlign(CENTER, CENTER);
