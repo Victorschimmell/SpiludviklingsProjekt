@@ -1,6 +1,6 @@
 void drawMenu(){
   
-  background(71);
+  background(1);
   scene = 1;
   
 }

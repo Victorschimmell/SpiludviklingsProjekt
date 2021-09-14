@@ -1,7 +1,8 @@
+
+  
 ///////////////////Spillet///////////////////
-void drawGame(){
-  
-  background(71);
-  
-  
+void drawGame() {
+
+  background(1);
+  drawGrid(gridCount);
 }
