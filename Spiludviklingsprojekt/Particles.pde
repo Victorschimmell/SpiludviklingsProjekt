@@ -78,17 +78,24 @@ class Particle { //tegner particler
   //tegner ellipserne der en del af vores particle
   void render() {
     if (visible) {
-      noStroke();
-      ellipse(x, y, 2 * r, 2 * r);
-    }
+
+
+             
+       
+        fill(252, 15, 192); // angiv farve før brug
+
+        noStroke();
+        ellipse(x, y, 2 * r, 2 * r);
+      }
+    
   }
 
   void update() { //bevæger partiklerne i givne retninger
-   
-      x += dx;
-      y += dy;
-      r += dr;
-    
+
+    x += dx;
+    y += dy;
+    r += dr;
+
     if (r < 1) {   //fjerne en particle når den bliver for lille
       visible=false;
     }

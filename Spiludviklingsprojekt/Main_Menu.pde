@@ -43,7 +43,7 @@ void drawMenu(){
 }
 
 void mousePressed(){
-  if (mouseX>width/2-width/10 && mouseX<width/2+width/10 && mouseY>height/2-height/16 && mouseY<height/2+height/16){
+  if (mouseX>width/2-width/10 && mouseX<width/2+width/10 && mouseY>height/2-height/16 && mouseY<height/2+height/16 && scene == 0){
     scene=1;
   }
 }

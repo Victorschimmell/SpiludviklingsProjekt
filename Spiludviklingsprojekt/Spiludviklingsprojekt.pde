@@ -14,7 +14,7 @@ int where = -1000;
 //Particle
 ArrayList<Particle> particles;
 ArrayList<ParticleSystem> systems;
-int P_antal; // mængfde af particles
+int P_antal = 100; // mængfde af particles
 
 Ball ball = new Ball();
 
@@ -72,7 +72,7 @@ void drawGrid(int count) {
   }
   ///////////////////tegner grid///////////////////
   pushMatrix();
-  translate(0, height, where);
+  translate(0, height-height/5, where);
   stroke(255);
   float size = (count -1) * grid*4; //bestemmer størrelse
 
