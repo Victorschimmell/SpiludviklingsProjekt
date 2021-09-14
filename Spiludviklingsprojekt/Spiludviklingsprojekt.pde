@@ -10,7 +10,7 @@ boolean[] pressed = new boolean[256];
 void setup() {
 
   ///////////////////Basic///////////////////
-  fullScreen(P2D);
+  fullScreen(P3D);
   frameRate(240);
   smooth();
   textAlign(CENTER, CENTER);
@@ -31,6 +31,7 @@ void draw() {
     println("Din kode er i stykker brormand");
   }
   
+  //FPS, så du kan se hvor dårlig din computer er.
   text(round(frameRate) + " FPS", width-50*displayDensity(), 50*displayDensity());
   
   
