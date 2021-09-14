@@ -11,6 +11,13 @@ boolean[] pressed = new boolean[256];
 int grid = 100, gridCount = 50;
 int where = -1000;
 
+//Particle
+ArrayList<Particle> particles;
+ArrayList<ParticleSystem> systems;
+int P_antal; // mængfde af particles
+
+Ball ball = new Ball();
+
 
 void setup() {
 
@@ -20,6 +27,11 @@ void setup() {
   smooth();
   textAlign(CENTER, CENTER);
   ///////////////////Andet///////////////////
+  systems = new ArrayList<ParticleSystem>();
+  ball = new Ball();
+  
+  
+  
 }
 
 
@@ -33,14 +45,16 @@ void draw() {
   } else if ( scene == 2) {
     drawOption();
   } else {
+
     println("Din kode er i stykker brormand");
   }
-
+  fill(255);
   //FPS, så du kan se hvor dårlig din computer er.
   text(round(frameRate) + " FPS", width-50*displayDensity(), 50*displayDensity());
 }
 
 // Aflæse keycodes og herfra kunne bestemme hvilke kanpper der bliver trykket på
+///////////////////KeyPressed///////////////////
 void keyPressed() {
   pressed[keyCode] = true;
 }
@@ -49,20 +63,20 @@ void keyReleased() {
   pressed[keyCode] = false;
 }  
 
-
+///////////////////Grid draw funktion///////////////////
 void drawGrid(int count) {
-
+  ///////////////////For den til at bevæge sig///////////////////
   where+=7;
   if (where>1000) {
     where = -1000;
   }
-
+  ///////////////////tegner grid///////////////////
   pushMatrix();
   translate(0, height, where);
   stroke(255);
-  float size = (count -1) * grid*4;
+  float size = (count -1) * grid*4; //bestemmer størrelse
 
-  for (int i = 0; i < count; i++) {
+  for (int i = 0; i < count; i++) { // tegner lines for i
     float pos = map(i, 0, count-1, -0.5 * size, 0.5 * size);
     line(pos, 0, -size/2, pos, 0, size/2);
     line(-size/2, 0, pos, size/2, 0, pos);
