@@ -56,6 +56,7 @@ goal2 = new Goal(width-100,height/5,10,100);
     drawMenu();
   } else if ( scene == 1) {
     drawGame();
+    drawUi();
   } else if ( scene == 2) {
     drawOption();
   } else {
@@ -90,6 +91,7 @@ void drawGrid(int count) {
   ///////////////////tegner grid///////////////////
   pushMatrix();
   translate(0, 0, where);
+  strokeWeight(1);
   stroke(40);
   float size = (count -1) * grid*4; //bestemmer størrelse
 
@@ -102,7 +104,7 @@ void drawGrid(int count) {
 }
 
 void drawScore(){
-  textSize(50);
+  textSize(35);
   textFont(font);
   fill(0,0,0);
   text("1",width*1/4,height*8/9);
