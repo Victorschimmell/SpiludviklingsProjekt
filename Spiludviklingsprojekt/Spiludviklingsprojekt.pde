@@ -59,6 +59,7 @@ void draw() {
   }
   fill(255);
   //FPS, så du kan se hvor dårlig din computer er.
+  textSize(12);
   text(round(frameRate) + " FPS", width-50*displayDensity(), 50*displayDensity());
 }
 

@@ -8,11 +8,11 @@ class Player {
   PVector gra; //gravity
   PVector dir; //retning af tilført kraft
   PVector acc; //tilført kraft // f.eks. fra eet spark af modstander
-  
+
   int r = 40; // radius
-  
-  
-  
+
+
+
   ///////////////////CONSTRUCTOR///////////////////
   Player(int Retning) { // retning = 1 = player 1, retning = 2 = player 2
     retning = Retning;
@@ -24,21 +24,56 @@ class Player {
 
       pos = new PVector( width-width/6, height-height/5-(r+4));
     }
+
+    vel = new PVector(2, 2);
+    gra = new PVector(0, 0.1);
   }
-  
-  
-    ///////////////////TEGNER SPILLERE///////////////////
-  void display(){
-    
+
+
+  ///////////////////TEGNER SPILLERE///////////////////
+  void display() {
+
     stroke(255);
     strokeWeight(3);
     fill(1);
     ellipse(pos.x, pos.y, r*2, r*2);
+
+
+    fill(255);
+    textSize(42);
+    if (retning == 1) {
+      text(":)", pos.x, pos.y-5);
+    } else if (retning ==2) {
+      text(";)", pos.x, pos.y-5);
+    }
+
     strokeWeight(1);
-    
-    
   }
-  
-  
-  
+  ///////////////////BEVÆGER SPILLERE///////////////////
+
+  void update() {
+    
+    vel.add(gra);
+    
+    if (retning == 1) {
+      if (pressed[65]) { /* A */
+        pos.x-=vel.x;
+      }
+
+      if (pressed[68]) { /* D */
+        pos.x+=vel.x;
+      }
+      
+    } else if( retning == 2){
+      
+       if (pressed[37]) { /* A */
+        pos.x-=vel.x;
+      }
+      
+      if (pressed[39]) { /* A */
+        pos.x+=vel.x;
+      }
+      
+    }
+  }
 }

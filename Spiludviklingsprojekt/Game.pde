@@ -10,10 +10,12 @@ void drawGame() {
 
   ///////////////////TEGNER GOAL///////////////////
 
-  
+
   ///////////////////TEGNER PLAYER1, PLAYER 2///////////////////
-player1.display();
-player2.display();
+  player1.display();
+  player2.display();
+  player1.update();
+  player2.update();
 
   ///////////////////TEGNER BOLDEN///////////////////
   ball.update();
