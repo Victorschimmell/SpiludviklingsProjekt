@@ -9,11 +9,11 @@ class Ball {
 
   int r; // radius
 
-  boolean hit = false;
+  boolean doOnce = false;
 
   Ball() {
     pos = new PVector(width/2, height/5);
-    vel = new PVector(0, 0);
+    vel = new PVector(0, 2);
     acc = new PVector(0, 0);
     gra = new PVector (0, 0.1);
 
@@ -30,21 +30,23 @@ class Ball {
 
   void update() { // opdaterer position på bold
 
-    if (pos.y+r+5 <= height-height/5) {
-      acc.add(gra);
-      vel.add(acc);
-      vel.limit(10);
-      pos.add(vel);
-      hit= false;
-    } else {
+    pos.add(vel);
 
-      acc.sub(gra);
-      if (!hit) {
-        systems.add(new ParticleSystem(pos.x, pos.y+r));
-      }
-      hit = true;
+    vel.add(gra);
+    vel.add(acc);
 
-      println("bruh");
+    vel.limit(10);
+
+
+
+    if (pos.y+r > height-height/5) {
+
+      systems.add(new ParticleSystem(pos.x, pos.y+r));
+
+      vel.y = vel.y* -0.6;
+      pos.y = height-height/5-r;
+
+      println("bounce");
     }
   }
 }
