@@ -21,14 +21,15 @@ class Ball {
     r = 20;
   }
 
-  ///////////////////DISPLAY BOLD///////////////////
-  void display() { // tegner bold
+  ///////////////////TEGNER BOLD///////////////////
+  void display() { 
     stroke(255);
     strokeWeight(3);
     fill(1);
     ellipse(pos.x, pos.y, r*2, r*2);
     strokeWeight(1);
   }
+
 
   ///////////////////UPDATE BOLD VÆRDIER///////////////////
   void update() { // opdaterer position på bold
