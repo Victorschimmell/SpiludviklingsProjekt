@@ -58,9 +58,10 @@ goal2 = new Goal(width-100,height/5,10,100);
     drawMenu();
   } else if ( scene == 1) {
     drawGame();
-    drawUi();
+    drawButton();
   } else if ( scene == 2) {
     drawOption();
+    drawButton();
   } else {
 
     println("Din kode er i stykker brormand");

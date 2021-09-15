@@ -1,4 +1,4 @@
-void drawUi(){
+void drawButton(){
   if (mouseX>15 && mouseY>15 && mouseX<85 && mouseY<85) {
     drawHome(80);
   } else {
