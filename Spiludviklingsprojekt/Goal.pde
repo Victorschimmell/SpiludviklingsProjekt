@@ -24,8 +24,13 @@ class Goal {
 
   void display(){
   //Tegn mål1
+    stroke(200);
+    strokeWeight(100);
+    fill(100);
+    line(pos.x,pos.y, width/8, height/5+100);
     
 //Tegn mål2
+  
   
   }
   
