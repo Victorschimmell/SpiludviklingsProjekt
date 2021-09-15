@@ -7,9 +7,12 @@ class Player {
   PVector vel; //hastighed
   PVector gra; //gravity
   PVector dir; //retning af tilført kraft
-  PVector acc; //tilført kraft // f.eks. fra eet spark af modstander
+  PVector acc; //tilført kraft // f.eks. fra et spark af modstander
 
   int r = 40; // radius
+  int fart = 2;
+  boolean inAir = false;
+  boolean inAir2 = false;
 
 
 
@@ -25,7 +28,7 @@ class Player {
       pos = new PVector( width-width/6, height-height/5-(r+4));
     }
 
-    vel = new PVector(2, 2);
+    vel = new PVector(0, 2);
     gra = new PVector(0, 0.1);
   }
 
@@ -52,28 +55,46 @@ class Player {
   ///////////////////BEVÆGER SPILLERE///////////////////
 
   void update() {
-    
+
     vel.add(gra);
+
     
     if (retning == 1) {
       if (pressed[65]) { /* A */
-        pos.x-=vel.x;
+        pos.x-=fart;
       }
 
       if (pressed[68]) { /* D */
-        pos.x+=vel.x;
+        pos.x+=fart;
       }
       
-    } else if( retning == 2){
+      pos.y+=vel.y;
       
-       if (pressed[37]) { /* A */
-        pos.x-=vel.x;
+      
+      if( pos.y > height-height/5-(r)){
+      
+      pos.y = height-height/5-(r);
+      
+      vel.y = 0;
+      inAir = false;
       }
       
-      if (pressed[39]) { /* A */
-        pos.x+=vel.x;
-      }
+      if (pressed[87] && !inAir) { /* W */
+        vel.y=-fart*3;
+        inAir= true;
       
+      } 
+      
+      
+    } else if ( retning == 2) {
+
+      if (pressed[37]) { /* VENSTRE PIL */
+        pos.x-=fart;
+      }
+
+      if (pressed[39]) { /* HØJRE PIL */
+        pos.x+=fart;
+      }
     }
   }
 }
