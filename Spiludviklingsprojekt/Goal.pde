@@ -5,11 +5,9 @@ class Goal {
   
   //Vektor for deres position
   PVector pos; //position
- 
-  
   
 //Constructor som gør vores nye objekter klar til brug
-  Goal(int Option) { // retning = 1 = goal 1, retning = 2 = goal 2
+   Goal(int Option) { // retning = 1 = goal 1, retning = 2 = goal 2
     option = Option;
 
     if (option ==1) {
@@ -20,6 +18,7 @@ class Goal {
       pos = new PVector( width-100, height/5-200);
     }
   }
+  
   
   //Tegn mål1
   void drawGoal() {

@@ -43,7 +43,7 @@ void setup() {
 }
 
 
-void draw() {
+  raw() {
   ///////////////////Scene selection///////////////////
 
   if ( scene == 0) {
@@ -61,6 +61,7 @@ void draw() {
   textSize(12);
   text(round(frameRate) + " FPS", width-50*displayDensity(), 50*displayDensity());
 }
+
 
 // Aflæse keycodes og herfra kunne bestemme hvilke kanpper der bliver trykket på
 ///////////////////KeyPressed///////////////////
