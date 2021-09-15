@@ -90,7 +90,7 @@ void drawGrid(int count) {
   ///////////////////tegner grid///////////////////
   pushMatrix();
   translate(0, 0, where);
-  stroke(255);
+  stroke(40);
   float size = (count -1) * grid*4; //bestemmer størrelse
 
   for (int i = 0; i < count; i++) { // tegner lines for i
