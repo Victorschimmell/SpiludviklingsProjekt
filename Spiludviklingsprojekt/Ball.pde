@@ -32,7 +32,7 @@ class Ball {
 
 
   ///////////////////UPDATE BOLD VÆRDIER///////////////////
-  void update() { // opdaterer position på bold
+  void update() { // opdaterer position på bold fordi den skal kunne bevæge sig.
 
     pos.add(vel);
 

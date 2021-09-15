@@ -35,8 +35,6 @@ void setup() {
   systems = new ArrayList<ParticleSystem>();
   ball = new Ball();
 
-  
-
   player1 = new Player(1);
   player2 = new Player(2);
 }

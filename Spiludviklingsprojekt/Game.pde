@@ -5,7 +5,6 @@ void drawGame() {
 
   background(1);
   drawGrid(gridCount);
-  line(0, height-height/5, width, height-height/5);
   rectMode(CORNER);
   rect(0, height-height/5, width, height/5);
 
@@ -13,7 +12,8 @@ void drawGame() {
   Goal();
   
   ///////////////////TEGNER PLAYER1, PLAYER 2///////////////////
-
+player1.display();
+player2.display();
 
   ///////////////////TEGNER BOLDEN///////////////////
   ball.update();
