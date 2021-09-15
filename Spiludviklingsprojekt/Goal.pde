@@ -1,4 +1,4 @@
-void Goal(){
+class Goal {
 
   
   
