@@ -16,6 +16,9 @@ ArrayList<Particle> particles;
 ArrayList<ParticleSystem> systems;
 int P_antal = 100; // mængfde af particles
 
+//Text
+PFont font;
+
 Ball ball = new Ball();
 
 Player player1 = new Player(1); //1 = retning = 1
@@ -29,6 +32,7 @@ void setup() {
 
   ///////////////////Basic///////////////////
   size(1400, 800,P3D);
+  font = createFont("SFTransRoboticsExtended.ttf",128);
 
   frameRate(240);
   smooth();
@@ -95,4 +99,12 @@ void drawGrid(int count) {
     line(-size/2, 0, pos, size/2, 0, pos);
   }
   popMatrix();
+}
+
+void drawScore(){
+  textSize(50);
+  textFont(font);
+  fill(0,0,0);
+  text("1",width*1/4,height*8/9);
+  text("3",width*3/4,height*8/9);
 }
