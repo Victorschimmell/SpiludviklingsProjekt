@@ -15,7 +15,7 @@ class Goal {
       pos = new PVector( width-width+100,height/5, height/5);
     } else if (option == 2) {
 
-      pos = new PVector( width-100, height/5-200);
+      pos = new PVector(width-100, height/5-200);
     }
   }
   
@@ -25,8 +25,8 @@ class Goal {
      stroke(1);
     strokeWeight(5);
     fill(196,202,206);
-    rect(width-width+100,height/5, width-100, height/5-200);
-  
+    rect(pos.x,pos.y, 20, 100);
+
 //Tegn mål2
   
   

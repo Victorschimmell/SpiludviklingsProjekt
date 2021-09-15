@@ -39,6 +39,9 @@ void setup() {
 
   player1 = new Player(1);
   player2 = new Player(2);
+  
+  goal1 = new Goal(1);
+  goal2 = new Goal(2);
 
 }
   void draw(){
