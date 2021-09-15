@@ -112,7 +112,29 @@ class Player {
         vel.y=-fart*3;
         inAir2= true;
       
-      } 
+       }
     }
   }
+  void collision () {
+    PVector distVect = PVector.sub(player2.pos, player1.pos);
+    
+    float distVectMag = distVect.mag();
+    
+    float minDist = player1.r + player2.r;
+    
+    if (distVectMag < minDist) {
+      float distCorrection = (minDist-distVectMag)/2.0;
+      PVector d = distVect.copy();
+      PVector correctionVect = d.normalize().mult(distCorrection);
+      player2.pos.add(correctionVect);
+      player1.pos.sub(correctionVect);
+    
+
+
+println("Colliding");
+
+
+  }
+}
+
 }
