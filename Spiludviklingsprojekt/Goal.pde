@@ -23,9 +23,9 @@ class Goal {
   
   //Tegn mål1
   void drawGoal() {
-     stroke(200);
+     stroke(1);
     strokeWeight(5);
-    fill(1);
+    fill(196,202,206);
     rect(width-width+100,height/5, width-100, height/5-200);
   
 //Tegn mål2
