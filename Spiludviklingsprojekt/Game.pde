@@ -20,6 +20,8 @@ void drawGame() {
   player2.display();
   player1.update();
   player2.update();
+  player1.collision();
+  player2.collision();
 
   ///////////////////TEGNER BOLDEN///////////////////
   ball.update();
