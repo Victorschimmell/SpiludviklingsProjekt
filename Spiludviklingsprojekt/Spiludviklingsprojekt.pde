@@ -39,6 +39,7 @@ void setup() {
 
   player1 = new Player(1);
   player2 = new Player(2);
+  
 }
 
 

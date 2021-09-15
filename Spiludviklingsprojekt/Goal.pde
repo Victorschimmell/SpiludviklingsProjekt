@@ -14,25 +14,23 @@ class Goal {
 
     if (option ==1) {
 
-      pos = new PVector( width/8, height-height/5);
+      pos = new PVector( width-width+100,height/5, height/5);
     } else if (option == 2) {
 
-      pos = new PVector( width-width/8, height-height/5);
+      pos = new PVector( width-100, height/5-200);
     }
   }
   
-
-  void display(){
   //Tegn mål1
-    stroke(200);
-    strokeWeight(100);
-    fill(100);
-    line(pos.x,pos.y, width/8, height/5+100);
-    
+  void drawGoal() {
+     stroke(200);
+    strokeWeight(5);
+    fill(1);
+    rect(width-width+100,height/5, width-100, height/5-200);
+  
 //Tegn mål2
   
   
   }
-  
-  
+
 }
