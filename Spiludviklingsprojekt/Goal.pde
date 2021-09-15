@@ -1,7 +1,7 @@
 class Goal {
 
 //Denne heltal variabel vælger hvilket mål det er, om det er goal1 eller goal2
- int retning;
+ int option;
   
   //Vektor for deres position
   PVector pos; //position
@@ -9,15 +9,15 @@ class Goal {
   
   
 //Constructor som gør vores nye objekter klar til brug
-  Goal(int Retning) { // retning = 1 = goal 1, retning = 2 = goal 2
-    retning = Retning;
+  Goal(int Option) { // retning = 1 = goal 1, retning = 2 = goal 2
+    option = Option;
 
-    if (retning ==1) {
+    if (option ==1) {
 
-      pos = new PVector( width/7, height-height/5);
-    } else if (retning == 2) {
+      pos = new PVector( width/8, height-height/5);
+    } else if (option == 2) {
 
-      pos = new PVector( width-width/7, height-height/5);
+      pos = new PVector( width-width/8, height-height/5);
     }
   }
   
