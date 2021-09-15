@@ -13,6 +13,7 @@ void drawMenu(){
   translate(width/2,height/2);
   textSize(42);
   textAlign(CENTER, CENTER);
+  textFont(mono);
   //Play
   if (mouseX>width/2-width/10 && mouseX<width/2+width/10 && mouseY>height/2-height/16 && mouseY<height/2+height/16){
     fill(0, 0, 0, 70);

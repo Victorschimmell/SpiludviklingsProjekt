@@ -18,6 +18,7 @@ int P_antal = 100; // mængfde af particles
 
 //Text
 PFont font;
+PFont mono;
 
 Ball ball = new Ball();
 
@@ -32,7 +33,8 @@ void setup() {
 
   ///////////////////Basic///////////////////
   size(1400, 800,P3D);
-  font = createFont("SFTransRoboticsExtended.ttf",128);
+  font = createFont("SFTransRoboticsExtended.ttf",72);
+  mono = createFont("andalemo.ttf",40);
 
   frameRate(240);
   smooth();
