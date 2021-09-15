@@ -26,7 +26,7 @@ void display(){
   stroke(255);
     strokeWeight(3);
     fill(196,202,206);
-    rect(posx2, posy, 10, 100);
+    rect(posx2, posy2, 10, 100);
 }
   
   }
