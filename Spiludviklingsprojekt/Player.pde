@@ -59,7 +59,7 @@ class Player {
     vel.add(gra);
 
     
-    if (retning == 1) {
+    if (retning == 1) {  ///////////////////PLAYER 1///////////////////
       if (pressed[65]) { /* A */
         pos.x-=fart;
       }
@@ -68,6 +68,7 @@ class Player {
         pos.x+=fart;
       }
       
+      ///////////////////JUMP funktionalitet///////////////////
       pos.y+=vel.y;
       
       
@@ -85,8 +86,7 @@ class Player {
       
       } 
       
-      
-    } else if ( retning == 2) {
+    } else if ( retning == 2) {  ///////////////////PLAYER 2///////////////////
 
       if (pressed[37]) { /* VENSTRE PIL */
         pos.x-=fart;
