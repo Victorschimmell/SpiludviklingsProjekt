@@ -11,6 +11,7 @@ class Ball {
 
   boolean doOnce = false;
 
+  ///////////////////CONSTRUCTOR///////////////////
   Ball() {
     pos = new PVector(width/2, height/5);
     vel = new PVector(0, 2);
@@ -20,6 +21,7 @@ class Ball {
     r = 20;
   }
 
+  ///////////////////DISPLAY BOLD///////////////////
   void display() { // tegner bold
     stroke(255);
     strokeWeight(3);
@@ -28,6 +30,7 @@ class Ball {
     strokeWeight(1);
   }
 
+  ///////////////////UPDATE BOLD VÆRDIER///////////////////
   void update() { // opdaterer position på bold
 
     pos.add(vel);
@@ -38,12 +41,11 @@ class Ball {
     vel.limit(10);
 
 
-
     if (pos.y+r > height-height/5) {
 
       systems.add(new ParticleSystem(pos.x, pos.y+r));
 
-      vel.y = vel.y* -0.6;
+      vel.y = vel.y* -0.95;
       pos.y = height-height/5-r;
 
       println("bounce");

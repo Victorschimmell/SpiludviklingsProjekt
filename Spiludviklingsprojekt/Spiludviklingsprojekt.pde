@@ -63,6 +63,7 @@ void keyReleased() {
   pressed[keyCode] = false;
 }  
 
+
 ///////////////////Grid draw funktion///////////////////
 void drawGrid(int count) {
   ///////////////////For den til at bevæge sig///////////////////
