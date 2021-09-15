@@ -95,6 +95,24 @@ class Player {
       if (pressed[39]) { /* HØJRE PIL */
         pos.x+=fart;
       }
+      
+      ///////////////////JUMP funktionalitet///////////////////
+      pos.y+=vel.y;
+      
+      
+      if( pos.y > height-height/5-(r)){
+      
+      pos.y = height-height/5-(r);
+      
+      vel.y = 0;
+      inAir2 = false;
+      }
+      
+      if (pressed[38] && !inAir2) { /* W */
+        vel.y=-fart*3;
+        inAir2= true;
+      
+      } 
     }
   }
 }

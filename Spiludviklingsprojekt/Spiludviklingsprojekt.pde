@@ -28,7 +28,7 @@ Goal goal2 = new Goal(2);
 void setup() {
 
   ///////////////////Basic///////////////////
-  fullScreen( P3D);
+  size(1400, 800,P3D);
 
   frameRate(240);
   smooth();
