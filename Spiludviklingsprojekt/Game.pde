@@ -9,7 +9,7 @@ void drawGame() {
   rect(0, height-height/5, width, height/5);
 
   ///////////////////TEGNER GOAL///////////////////
-  Goal();
+
   
   ///////////////////TEGNER PLAYER1, PLAYER 2///////////////////
 player1.display();
