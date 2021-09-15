@@ -40,15 +40,20 @@ class Ball {
 
     vel.limit(10);
 
-
+    doOnce = false;
     if (pos.y+r > height-height/5) {
 
-      systems.add(new ParticleSystem(pos.x, pos.y+r));
+      doOnce= true;
 
       vel.y = vel.y* -0.95;
       pos.y = height-height/5-r;
 
       println("bounce");
+    }
+
+
+    if (doOnce) {
+      systems.add(new ParticleSystem(pos.x, pos.y+r));
     }
   }
 }

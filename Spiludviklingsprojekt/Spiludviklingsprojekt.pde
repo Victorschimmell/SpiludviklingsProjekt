@@ -19,19 +19,18 @@ int P_antal = 100; // mængfde af particles
 Ball ball = new Ball();
 
 
+
 void setup() {
 
   ///////////////////Basic///////////////////
-  size(1400,800,P3D);
+  size(1400, 800, P3D);
   frameRate(240);
   smooth();
   textAlign(CENTER, CENTER);
   ///////////////////Andet///////////////////
   systems = new ArrayList<ParticleSystem>();
   ball = new Ball();
-  
-  
-  
+
 }
 
 
