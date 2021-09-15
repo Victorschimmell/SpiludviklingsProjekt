@@ -28,9 +28,7 @@ Goal goal2 = new Goal(2);
 void setup() {
 
   ///////////////////Basic///////////////////
-  size(1400, 800, P3D);
-
-  size(1400, 800, P3D);
+  fullScreen( P3D);
 
   frameRate(240);
   smooth();
@@ -83,7 +81,7 @@ void drawGrid(int count) {
   }
   ///////////////////tegner grid///////////////////
   pushMatrix();
-  translate(0, height-height/5, where);
+  translate(0, height, where);
   stroke(255);
   float size = (count -1) * grid*4; //bestemmer størrelse
 

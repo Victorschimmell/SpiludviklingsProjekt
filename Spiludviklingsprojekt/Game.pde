@@ -7,8 +7,10 @@ void drawGame() {
   drawGrid(gridCount);
   rectMode(CORNER);
   rect(0, height-height/5, width, height/5);
-
-  ///////////////////TEGNER GOAL///////////////////
+  strokeWeight(5);
+  stroke(252, 15, 192); 
+  line(width/2, height-height/5-4, width/2, height);
+  strokeWeight(1);
 
 
   ///////////////////TEGNER PLAYER1, PLAYER 2///////////////////
@@ -20,6 +22,11 @@ void drawGame() {
   ///////////////////TEGNER BOLDEN///////////////////
   ball.update();
   ball.display();
+  
+  ///////////////////TEGNER GOAL///////////////////
+
+
+
 
   ///////////////////TEGNER PARTICLES///////////////////
   for (ParticleSystem ps : systems)

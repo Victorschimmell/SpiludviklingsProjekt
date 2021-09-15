@@ -79,9 +79,6 @@ class Particle { //tegner particler
   void render() {
     if (visible) {
 
-
-             
-       
         fill(252, 15, 192); // angiv farve før brug
 
         noStroke();
