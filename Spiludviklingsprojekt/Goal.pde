@@ -7,7 +7,7 @@ class Goal {
   PVector pos; //position
   
 //Constructor som gør vores nye objekter klar til brug
-   Goal(int Option) { // retning = 1 = goal 1, retning = 2 = goal 2
+   Goal(int Option) { // option = 1 = goal 1, option = 2 = goal 2
     option = Option;
 
     if (option ==1) {
