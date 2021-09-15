@@ -21,6 +21,10 @@ Ball ball = new Ball();
 Player player1 = new Player(1); //1 = retning = 1
 Player player2 = new Player(2); // 2 = retning = 2
 
+//goal
+Goal goal1 = new Goal(1);
+Goal goal2 = new Goal(2);
+
 void setup() {
 
   ///////////////////Basic///////////////////
