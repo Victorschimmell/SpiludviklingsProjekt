@@ -1,35 +1,31 @@
 class Goal {
 
-//Denne heltal variabel vælger hvilket mål det er, om det er goal1 eller goal2
- int option;
+  private int posx = width-width+100;
+  private int posx2 = width-100;
+  private int posy = height/5;
   
-  //Vektor for deres position
-  PVector pos; //position
-  
-//Constructor som gør vores nye objekter klar til brug
-   Goal(int Option) { // option = 1 = goal 1, option = 2 = goal 2
-    option = Option;
+  //Constructor
+  //Initialize en constructor
+public Goal(int posx, int posy, int posx2){
 
-    if (option ==1) {
-
-      pos = new PVector( width-width+100,height/5, height/5);
-    } else if (option == 2) {
-
-      pos = new PVector(width-100, height/5-200);
-    }
-  }
+  //"this." definere disse values til den parameter som vi satte ovenfor
+  this.posx = posx;
+  this.posy = posy;
+  this.posx2 = posx2;
   
-  
+} 
   //Tegn mål1
-  void drawGoal() {
-     stroke(1);
-    strokeWeight(5);
+void display(){
+   stroke(255);
+    strokeWeight(3);
     fill(196,202,206);
-    rect(pos.x,pos.y, 20, 100);
+    rect(posx, posy, 10, 100);
 
-//Tegn mål2
-  
+  //Tegn mål2
+  stroke(255);
+    strokeWeight(3);
+    fill(196,202,206);
+    rect(posx2, posy, 10, 100);
+}
   
   }
-
-}

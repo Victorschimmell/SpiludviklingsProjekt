@@ -21,9 +21,9 @@ Ball ball = new Ball();
 Player player1 = new Player(1); //1 = retning = 1
 Player player2 = new Player(2); // 2 = retning = 2
 
-//goal
-Goal goal1 = new Goal(1);
-Goal goal2 = new Goal(2);
+//Sammenspil mellem Goal constructor
+Goal  goal1 = new Goal(width-width+100,height/5,10,100);
+Goal goal2 = new Goal(width-100,height/5,10,100);
 
 void setup() {
 
@@ -40,9 +40,10 @@ void setup() {
   player1 = new Player(1);
   player2 = new Player(2);
   
-  goal1 = new Goal(1);
-  goal2 = new Goal(2);
-
+goal1 = new Goal(width-width+100,height/5,10,100);
+goal2 = new Goal(width-100,height/5,10,100);
+  
+  
 }
   void draw(){
   ///////////////////Scene selection///////////////////
