@@ -22,7 +22,7 @@ Ball ball = new Ball();
 void setup() {
 
   ///////////////////Basic///////////////////
-  size(1400,800,P3D);
+  size(1400,800, P3D);
   frameRate(240);
   smooth();
   textAlign(CENTER, CENTER);
@@ -31,7 +31,7 @@ void setup() {
   ball = new Ball();
   
   
-  
+  Goal();
 }
 
 
