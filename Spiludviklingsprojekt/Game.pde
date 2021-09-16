@@ -9,7 +9,7 @@ void drawGame() {
   rect(0, height-height/5, width, height/5);
   strokeWeight(5);
   stroke(252, 15, 192); 
-  line(width/2, height-height/5-4, width/2, height);
+  line(width/2, height-height/5+1, width/2, height);
   strokeWeight(1);
 
   drawScore();
