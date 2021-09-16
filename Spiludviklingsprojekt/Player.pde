@@ -47,7 +47,7 @@ class Player {
     if (retning == 1) {
       text(":)", pos.x, pos.y-5);
     } else if (retning ==2) {
-      text(";)", pos.x, pos.y-5);
+      text("(;", pos.x, pos.y-5);
     }
 
     strokeWeight(1);
