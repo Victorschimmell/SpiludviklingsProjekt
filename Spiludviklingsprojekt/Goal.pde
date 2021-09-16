@@ -40,7 +40,7 @@ class Goal {
     
         if ( Goalnr == 1) {
       
-      rect(pos.x, pos.y, -50, 10);
+      rect(pos.x+10, pos.y, -60, 10);
       
     } else if (Goalnr == 2) {
       
@@ -58,7 +58,7 @@ class Goal {
       
     } else if (Goalnr == 2) {
       
-       rect(7.5+pos2.x+12.5, pos2.y+10, 2, 240+15);
+      rect(7.5+pos2.x+12.5, pos2.y+10, 2, 240+15);
       rect(7.5+pos2.x+27.5, pos2.y+10, 2, 240+15);
       rect(7.5+pos2.x+42.5, pos2.y+10, 2, 240+15);
   }
@@ -73,7 +73,7 @@ if ( Goalnr == 1) {
       
     } else if (Goalnr == 2) {
       
-        rect(pos2.x+60, pos2.y+55, -50, 2);
+      rect(pos2.x+60, pos2.y+55, -50, 2);
       rect(pos2.x+60, pos2.y+110, -50, 2);
       rect(pos2.x+60, pos2.y+165, -50, 2);
       rect(pos2.x+60, pos2.y+220, -50, 2);
