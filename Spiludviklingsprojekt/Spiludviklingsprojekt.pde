@@ -25,7 +25,7 @@ Ball ball = new Ball();
 Player player1 = new Player(1); //1 = retning = 1
 Player player2 = new Player(2); // 2 = retning = 2
 
-//Goal constructor
+//Goal constructor arguments, vi laver to nye objekter
 Goal  goal1 = new Goal(width-width+100,height/5,10,100);
 Goal goal2 = new Goal(width-100,height/5,10,100);
 
@@ -48,8 +48,7 @@ void setup() {
   
 goal1 = new Goal(width-width+100,height/5,10,100);
 goal2 = new Goal(width-100,height/5,10,100);
-  
-  
+    
 }
   void draw(){
   ///////////////////Scene selection///////////////////
