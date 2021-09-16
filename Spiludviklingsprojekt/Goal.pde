@@ -16,16 +16,19 @@ public Goal(int posx, int posy, int posx2, int posy2){
   this.posy2 = posy2;
 } 
   //Tegn mål1
-void display(){
+void display() {
+  
    stroke(255);
     strokeWeight(3);
     fill(196,202,206);
+    goal1.display();
     rect(posx, posy, 10, 100);
 
   //Tegn mål2
   stroke(255);
     strokeWeight(3);
     fill(196,202,206);
+    goal2.display();
     rect(posx2, posy2, 10, 100);
 }
   
