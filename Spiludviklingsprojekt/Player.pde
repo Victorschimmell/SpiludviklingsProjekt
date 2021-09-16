@@ -128,8 +128,6 @@ class Player {
       PVector correctionVect = d.normalize().mult(distCorrection);
       player2.pos.add(correctionVect);
       player1.pos.sub(correctionVect);
-    
-
 
 println("Colliding");
 

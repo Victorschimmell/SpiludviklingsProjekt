@@ -26,15 +26,16 @@ Player player1 = new Player(1); //1 = retning = 1
 Player player2 = new Player(2); // 2 = retning = 2
 
 //Goal constructor arguments, vi laver to nye objekter
-Goal  goal1 = new Goal(width-width+100,height/5,10,100);
-Goal goal2 = new Goal(width-100,height/5,10,100);
+
+Goal  goal1 = new Goal(1);
+Goal goal2 = new Goal(2);
 
 void setup() {
 
   ///////////////////Basic///////////////////
-  size(1400, 800,P3D);
-  font = createFont("SFTransRoboticsExtended.ttf",72);
-  mono = createFont("andalemo.ttf",40);
+  size(1400, 800, P3D);
+  font = createFont("SFTransRoboticsExtended.ttf", 72);
+  mono = createFont("andalemo.ttf", 40);
 
   frameRate(240);
   smooth();
@@ -45,12 +46,11 @@ void setup() {
 
   player1 = new Player(1);
   player2 = new Player(2);
-  
-goal1 = new Goal(width-width+100,height/5,10,100);
-goal2 = new Goal(width-100,height/5,10,100);
-    
+
+  goal1 = new Goal(1);
+  goal2 = new Goal(2);
 }
-  void draw(){
+void draw() {
   ///////////////////Scene selection///////////////////
 
   if ( scene == 0) {
@@ -105,10 +105,10 @@ void drawGrid(int count) {
   popMatrix();
 }
 
-void drawScore(){
+void drawScore() {
   textSize(35);
   textFont(font);
-  fill(0,0,0);
-  text("1",width*1/4,height*8/9);
-  text("3",width*3/4,height*8/9);
+  fill(0, 0, 0);
+  text("1", width*1/4, height*8/9);
+  text("3", width*3/4, height*8/9);
 }

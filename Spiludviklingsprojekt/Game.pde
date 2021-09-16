@@ -11,7 +11,7 @@ void drawGame() {
   stroke(252, 15, 192); 
   line(width/2, height-height/5-4, width/2, height);
   strokeWeight(1);
-  
+
   drawScore();
 
 
@@ -26,10 +26,10 @@ void drawGame() {
   ///////////////////TEGNER BOLDEN///////////////////
   ball.update();
   ball.display();
-  
+
   ///////////////////TEGNER GOAL///////////////////
-
-
+goal1.display();
+goal2.display();
 
 
   ///////////////////TEGNER PARTICLES///////////////////
