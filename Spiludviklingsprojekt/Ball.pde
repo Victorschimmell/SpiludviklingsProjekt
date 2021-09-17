@@ -18,7 +18,7 @@ class Ball {
     acc = new PVector(0, 0);
     gra = new PVector (0, 0.1);
 
-    r = 20;
+    r = 15;
   }
 
   ///////////////////TEGNER BOLD///////////////////
@@ -41,11 +41,13 @@ class Ball {
 //Når bolden rammer ind i målet, begrænses den, og spawner bolden i midten igen
      if(pos.x >= width-r-0.2){
       pos.x = width/2;
+      pos.y = height/5;
        ball.vel.sub(ball.vel);
       ball.acc.sub(ball.acc);
       }
        if(pos.x <= width-width+r+0.2){
       pos.x = width/2;
+      pos.y = height/5;
       ball.vel.sub(ball.vel);
       ball.acc.sub(ball.acc);
       }

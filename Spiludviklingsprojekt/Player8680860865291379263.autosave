@@ -6,8 +6,6 @@ class Player {
   PVector pos; //position
   PVector vel; //hastighed
   PVector gra; //gravity
-  PVector dir; //retning af tilført kraft
-  PVector acc; //tilført kraft // f.eks. fra et spark af modstander
 
   int r = 30; // radius
   int fart = 2;
@@ -64,16 +62,17 @@ class Player {
     //DASH   
     if (retning == 1) {
       if (pressed[32]) {
-
-        pos.x = pos.x+2.5;
+       fart = 4;
       }
+     
     }
     //DASH
     if (retning == 2) {
       if (pressed[190]) {
 
-        pos.x = pos.x-2.5;
+        fart = 4;
       }
+     
     }
   }
   ///////////////////BEVÆGER SPILLERE///////////////////
