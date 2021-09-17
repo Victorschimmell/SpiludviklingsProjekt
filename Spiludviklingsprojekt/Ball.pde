@@ -29,8 +29,6 @@ class Ball {
     ellipse(pos.x, pos.y, r*2, r*2);
     strokeWeight(1);
     
-    
-    
     //Betingelser for Ball
      while(pos.x >= width-r){
     pos.x = pos.x-1;
@@ -41,17 +39,16 @@ class Ball {
 
 
 //Når bolden rammer ind i målet, begrænses den, og spawner bolden i midten igen
-     if(pos.x >= width-r-0.1){
+     if(pos.x >= width-r-0.2){
       pos.x = width/2;
        ball.vel.sub(ball.vel);
       ball.acc.sub(ball.acc);
       }
-       if(pos.x <= width-width+r+0.1){
+       if(pos.x <= width-width+r+0.2){
       pos.x = width/2;
       ball.vel.sub(ball.vel);
       ball.acc.sub(ball.acc);
       }
-   
   }
 
 
