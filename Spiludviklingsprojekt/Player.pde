@@ -59,6 +59,24 @@ class Player {
     while(pos.x <= width-width+r){
     pos.x = pos.x+1;
     }
+  
+       //DASH   
+    if (retning == 1)  {
+    if (keyPressed){
+    if (key == ' ') {
+      pos.x = pos.x+2.5;
+    }
+    }
+    }
+    //DASH
+      if (retning == 2)  {
+    if (keyPressed){
+    if (key == '.') {
+      pos.x = pos.x-2.5;
+    }
+    }
+    }
+  
   }
   ///////////////////BEVÆGER SPILLERE///////////////////
 
