@@ -45,9 +45,9 @@ class Player {
     fill(255);
     textSize(42);
     if (retning == 1) {
-      text(":)", pos.x, pos.y-5);
+      text("L", pos.x, pos.y-5);
     } else if (retning ==2) {
-      text("(;", pos.x, pos.y-5);
+      text("R", pos.x, pos.y-5);
     }
 
     strokeWeight(1);
