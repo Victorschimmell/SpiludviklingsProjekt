@@ -96,7 +96,6 @@ void ballCollisionP1 () {
   //Hvis afstanden mellem de to cirkler er mindre end den mindst tilladte afstand, så gør dette//
   if (distVectMagB1 < minDistB1) {
     float distCorrectionB1 = (minDistB1-distVectMagB1)/2.0;
-
     PVector dB1 = distVectB1.copy();
     PVector correctionVectB1 = dB1.normalize().mult(distCorrectionB1);
     ball.pos.add(correctionVectB1);
@@ -125,7 +124,6 @@ void ballCollisionP2 () {
     PVector correctionVectB2 = dB2.normalize().mult(distCorrectionB2*PI);
     player2.pos.add(correctionVectB2);
     ball.pos.sub(correctionVectB2);
-
 
     ball.vel = ball.vel.normalize().mult(distCorrectionB2);
     ball.vel.sub(correctionVectB2);

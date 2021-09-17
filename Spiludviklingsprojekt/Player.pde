@@ -6,15 +6,14 @@ class Player {
   PVector pos; //position
   PVector vel; //hastighed
   PVector gra; //gravity
-  PVector dir; //retning af tilført kraft
-  PVector acc; //tilført kraft // f.eks. fra et spark af modstander
 
-  int r = 30; // radius
-  int fart = 2;
-  boolean inAir = false;
+  int r = 40; // radius
+  int fart = 2; // fart
+  boolean inAir = false; // 
   boolean inAir2 = false;
 
-
+int count = 0;
+int last;
 
   ///////////////////CONSTRUCTOR///////////////////
   Player(int Retning) { // retning = 1 = player 1, retning = 2 = player 2
@@ -56,27 +55,11 @@ class Player {
     while (pos.x >= width-r) {
       pos.x = pos.x-1;
     }
-    while (pos.x <= width-width+r) {
+    while (pos.x <= r) {
       pos.x = pos.x+1;
     }
-
-
-    //DASH   
-    if (retning == 1) {
-      if (pressed[32]) {
-
-        pos.x = pos.x+2.5;
-      }
-    }
-    //DASH
-    if (retning == 2) {
-      if (keyPressed) {
-        if(key == '.'){
-        pos.x = pos.x-2.5;
-      }
-    }
-    }
   }
+
   ///////////////////BEVÆGER SPILLERE///////////////////
 
   void update() {
@@ -86,12 +69,21 @@ class Player {
 
     if (retning == 1) {  ///////////////////PLAYER 1///////////////////
       if (pressed[65]) { /* A */
+      
         pos.x-=fart;
       }
 
       if (pressed[68]) { /* D */
         pos.x+=fart;
-      }
+      
+    
+      } 
+      
+
+      /*  if (pressed[32]) {
+       
+       pos.x = pos.x+2.5;
+       }*/
 
       ///////////////////JUMP funktionalitet///////////////////
       pos.y+=vel.y;
@@ -118,6 +110,10 @@ class Player {
       if (pressed[39]) { /* HØJRE PIL */
         pos.x+=fart;
       }
+
+      /*         if (pressed[190]) {
+       pos.x = pos.x-2.5;
+       }*/
 
       ///////////////////JUMP funktionalitet///////////////////
       pos.y+=vel.y;
