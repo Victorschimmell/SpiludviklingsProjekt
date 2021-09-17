@@ -28,6 +28,14 @@ class Ball {
     fill(1);
     ellipse(pos.x, pos.y, r*2, r*2);
     strokeWeight(1);
+    
+     while(pos.x >= width-r){
+    pos.x = pos.x-1;
+    }
+    while(pos.x <= width-width+r){
+    pos.x = pos.x+1;
+    }
+    
   }
 
 
@@ -101,8 +109,6 @@ void ballCollisionP2 () {
       
       ball.vel = ball.vel.normalize().mult(distCorrectionB2);
 
-
-      
       
 
       println("CollidingPLAYER2");
