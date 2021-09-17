@@ -55,6 +55,7 @@ class Ball {
 
     if (doOnce) {
       systems.add(new ParticleSystem(pos.x, pos.y+r));
-    }
+   
+}
   }
 }

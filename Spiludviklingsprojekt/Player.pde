@@ -51,6 +51,14 @@ class Player {
     }
 
     strokeWeight(1);
+    
+    //Borders på playernes pos.x, så de ikke kan gå ud fra banen på x
+    while(pos.x >= width-r){
+    pos.x = pos.x-1;
+    }
+    while(pos.x <= width-width+r){
+    pos.x = pos.x+1;
+    }
   }
   ///////////////////BEVÆGER SPILLERE///////////////////
 
@@ -130,9 +138,7 @@ class Player {
       player1.pos.sub(correctionVect);
 
 println("Colliding");
-
-
-  }
+ 
 }
-
+}
 }

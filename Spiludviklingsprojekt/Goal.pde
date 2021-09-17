@@ -28,11 +28,11 @@ class Goal {
 
     if ( Goalnr == 1) {
       
-      rect(pos.x, pos.y, 10, 240+25);
+      rect(pos.x+2.5, pos.y, 10, 240+25);
       
     } else if (Goalnr == 2) {
       
-      rect(pos2.x, pos2.y, 10, 240+25);
+      rect(pos2.x-2.5, pos2.y, 10, 240+25);
       
     }
     
@@ -40,11 +40,11 @@ class Goal {
     
         if ( Goalnr == 1) {
       
-      rect(pos.x+10, pos.y, -60, 10);
+      rect(pos.x+10+2.5, pos.y, -62.5, 10);
       
     } else if (Goalnr == 2) {
       
-      rect(pos2.x, pos2.y, 60, 10);
+      rect(pos2.x-2.5, pos2.y, 62.5, 10);
       
     }
     
@@ -66,17 +66,17 @@ class Goal {
   //Lodret net til målene
 if ( Goalnr == 1) {
       
-      rect(pos.x, pos.y+55, -50, 2);
-      rect(pos.x, pos.y+110, -50, 2);
-      rect(pos.x, pos.y+165, -50, 2);
-      rect(pos.x, pos.y+220, -50, 2);
+      rect(pos.x+2.5, pos.y+55, -50-5, 2);
+      rect(pos.x+2.5, pos.y+110, -50-5, 2);
+      rect(pos.x+2.5, pos.y+165, -50-5, 2);
+      rect(pos.x+2.5, pos.y+220, -50-5, 2);
       
     } else if (Goalnr == 2) {
       
-      rect(pos2.x+60, pos2.y+55, -50, 2);
-      rect(pos2.x+60, pos2.y+110, -50, 2);
-      rect(pos2.x+60, pos2.y+165, -50, 2);
-      rect(pos2.x+60, pos2.y+220, -50, 2);
+      rect(pos2.x+60+2.5, pos2.y+55, -50-5, 2);
+      rect(pos2.x+60+2.5, pos2.y+110, -50-5, 2);
+      rect(pos2.x+60+2.5, pos2.y+165, -50-5, 2);
+      rect(pos2.x+60+2.5, pos2.y+220, -50-5, 2);
     }
       
   
