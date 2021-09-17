@@ -26,6 +26,8 @@ void drawGame() {
   ///////////////////TEGNER BOLDEN///////////////////
   ball.update();
   ball.display();
+  ballCollisionP1();
+  ballCollisionP2();
 
   ///////////////////TEGNER GOAL///////////////////
 goal1.display();
