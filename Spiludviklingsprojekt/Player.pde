@@ -70,10 +70,11 @@ class Player {
     }
     //DASH
     if (retning == 2) {
-      if (pressed[190]) {
-
+      if (keyPressed) {
+        if(key == '.'){
         pos.x = pos.x-2.5;
       }
+    }
     }
   }
   ///////////////////BEVÆGER SPILLERE///////////////////
