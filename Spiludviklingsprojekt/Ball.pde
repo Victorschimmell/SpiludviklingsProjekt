@@ -41,6 +41,7 @@ class Ball {
     //Når bolden rammer ind i målet, begrænses den, og spawner bolden i midten igen
     if (pos.x >= width-r-0.2) {
       scoreP1 ++;
+      systems.add(new ParticleSystem(pos.x, pos.y));
       pos.x = width/2;
       pos.y = height/5;
       ball.vel.sub(ball.vel);
@@ -48,6 +49,7 @@ class Ball {
     }
     if (pos.x <= width-width+r+0.2) {
       scoreP2 ++;
+      systems.add(new ParticleSystem(pos.x, pos.y));
       pos.x = width/2;
       pos.y = height/5;
       ball.vel.sub(ball.vel);
