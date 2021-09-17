@@ -51,7 +51,7 @@ class Goal {
     //Tegn net til målene
     fill(255);
             if ( Goalnr == 1) {
-      
+     
       rect(pos.x-12.5, pos.y+10, 2, 240+15);
       rect(pos.x-27.5, pos.y+10, 2, 240+15);
       rect(pos.x-42.5, pos.y+10, 2, 240+15);

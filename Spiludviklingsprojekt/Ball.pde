@@ -28,29 +28,31 @@ class Ball {
     fill(1);
     ellipse(pos.x, pos.y, r*2, r*2);
     strokeWeight(1);
-    
+
     //Betingelser for Ball
-     while(pos.x >= width-r){
-    pos.x = pos.x-1;
+    while (pos.x >= width-r) {
+      pos.x = pos.x-1;
     }
-    while(pos.x <= width-width+r){
-    pos.x = pos.x+1;
+    while (pos.x <= width-width+r) {
+      pos.x = pos.x+1;
     }
 
 
-//Når bolden rammer ind i målet, begrænses den, og spawner bolden i midten igen
-     if(pos.x >= width-r-0.2){
-      pos.x = width/2;
-      pos.y = height/5;
-       ball.vel.sub(ball.vel);
-      ball.acc.sub(ball.acc);
-      }
-       if(pos.x <= width-width+r+0.2){
+    //Når bolden rammer ind i målet, begrænses den, og spawner bolden i midten igen
+    if (pos.x >= width-r-0.2) {
+      scoreP1 ++;
       pos.x = width/2;
       pos.y = height/5;
       ball.vel.sub(ball.vel);
       ball.acc.sub(ball.acc);
-      }
+    }
+    if (pos.x <= width-width+r+0.2) {
+      scoreP2 ++;
+      pos.x = width/2;
+      pos.y = height/5;
+      ball.vel.sub(ball.vel);
+      ball.acc.sub(ball.acc);
+    }
   }
 
 
@@ -78,58 +80,55 @@ class Ball {
 
     if (doOnce) {
       systems.add(new ParticleSystem(pos.x, pos.y+r));
-   
-}
+    }
   }
 }
 void ballCollisionP1 () {
   //Finder (x,Y) koordinater til player2 og player2, og trækker derefter player1's værdier fra player2, hvilket beskriver distancen mellem de to cirkler//
-    PVector distVectB1 = PVector.sub(ball.pos, player1.pos);
-    //Tager de to vektorkoordinater for hver player og finder derefter afstanden mellem de to cirkler//
-    float distVectMagB1 = distVectB1.mag();
-    //Beskriver den mindste værdi som playerne må være indenfor hinandens radius, hvilket er den enes radius + den andens//
-    float minDistB1 = player1.r + ball.r;
+  PVector distVectB1 = PVector.sub(ball.pos, player1.pos);
+  //Tager de to vektorkoordinater for hver player og finder derefter afstanden mellem de to cirkler//
+  float distVectMagB1 = distVectB1.mag();
+  //Beskriver den mindste værdi som playerne må være indenfor hinandens radius, hvilket er den enes radius + den andens//
+  float minDistB1 = player1.r + ball.r;
 
-    //Hvis afstanden mellem de to cirkler er mindre end den mindst tilladte afstand, så gør dette//
-    if (distVectMagB1 < minDistB1) {
-      float distCorrectionB1 = (minDistB1-distVectMagB1)/2.0;
+  //Hvis afstanden mellem de to cirkler er mindre end den mindst tilladte afstand, så gør dette//
+  if (distVectMagB1 < minDistB1) {
+    float distCorrectionB1 = (minDistB1-distVectMagB1)/2.0;
 
-      PVector dB1 = distVectB1.copy();
-      PVector correctionVectB1 = dB1.normalize().mult(distCorrectionB1);
-      ball.pos.add(correctionVectB1);
-      player1.pos.sub(correctionVectB1);
+    PVector dB1 = distVectB1.copy();
+    PVector correctionVectB1 = dB1.normalize().mult(distCorrectionB1);
+    ball.pos.add(correctionVectB1);
+    player1.pos.sub(correctionVectB1);
 
-      ball.vel = ball.vel.normalize().mult(distCorrectionB1*PI);
-      ball.vel.add(correctionVectB1);      
-        
+    ball.vel = ball.vel.normalize().mult(distCorrectionB1*PI);
+    ball.vel.add(correctionVectB1);      
 
-      println("CollidingPLAYER1");
-    }
+
+    println("CollidingPLAYER1");
   }
+}
 
 void ballCollisionP2 () {
- //Finder (x,Y) koordinater til player2 og player2, og trækker derefter player1's værdier fra player2, hvilket beskriver distancen mellem de to cirkler//
-    PVector distVectB2 = PVector.sub(player2.pos, ball.pos);
-    //Tager de to vektorkoordinater for hver player og finder derefter afstanden mellem de to cirkler//
-    float distVectMagB2 = distVectB2.mag();
-    //Beskriver den mindste værdi som playerne må være indenfor hinandens radius, hvilket er den enes radius + den andens//
-    float minDistB2 = ball.r + player2.r;
+  //Finder (x,Y) koordinater til player2 og player2, og trækker derefter player1's værdier fra player2, hvilket beskriver distancen mellem de to cirkler//
+  PVector distVectB2 = PVector.sub(player2.pos, ball.pos);
+  //Tager de to vektorkoordinater for hver player og finder derefter afstanden mellem de to cirkler//
+  float distVectMagB2 = distVectB2.mag();
+  //Beskriver den mindste værdi som playerne må være indenfor hinandens radius, hvilket er den enes radius + den andens//
+  float minDistB2 = ball.r + player2.r;
 
-    //Hvis afstanden mellem de to cirkler er mindre end den mindst tilladte afstand, så gør dette//
-    if (distVectMagB2 < minDistB2) {
-      float distCorrectionB2 = (minDistB2-distVectMagB2)/2.0;
-      PVector dB2 = distVectB2.copy();
-      PVector correctionVectB2 = dB2.normalize().mult(distCorrectionB2*PI);
-      player2.pos.add(correctionVectB2);
-      ball.pos.sub(correctionVectB2);
-      
-      
-      ball.vel = ball.vel.normalize().mult(distCorrectionB2);
-      ball.vel.sub(correctionVectB2);
-      
+  //Hvis afstanden mellem de to cirkler er mindre end den mindst tilladte afstand, så gør dette//
+  if (distVectMagB2 < minDistB2) {
+    float distCorrectionB2 = (minDistB2-distVectMagB2)/2.0;
+    PVector dB2 = distVectB2.copy();
+    PVector correctionVectB2 = dB2.normalize().mult(distCorrectionB2*PI);
+    player2.pos.add(correctionVectB2);
+    ball.pos.sub(correctionVectB2);
 
-      println("CollidingPLAYER2");
-      
-      
-    }
+
+    ball.vel = ball.vel.normalize().mult(distCorrectionB2);
+    ball.vel.sub(correctionVectB2);
+
+
+    println("CollidingPLAYER2");
   }
+}
