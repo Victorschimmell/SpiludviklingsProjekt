@@ -29,6 +29,9 @@ class Ball {
     ellipse(pos.x, pos.y, r*2, r*2);
     strokeWeight(1);
     
+    
+    
+    //Betingelser for Ball
      while(pos.x >= width-r){
     pos.x = pos.x-1;
     }
@@ -36,10 +39,18 @@ class Ball {
     pos.x = pos.x+1;
     }
 
-     if(pos.x >= width-r){
+
+//Når bolden rammer ind i målet, begrænses den, og spawner bolden i midten igen
+     if(pos.x >= width-r-0.1){
       pos.x = width/2;
+       ball.vel.sub(ball.vel);
+      ball.acc.sub(ball.acc);
       }
-    
+       if(pos.x <= width-width+r+0.1){
+      pos.x = width/2;
+      ball.vel.sub(ball.vel);
+      ball.acc.sub(ball.acc);
+      }
    
   }
 
@@ -89,7 +100,7 @@ void ballCollisionP1 () {
       ball.pos.add(correctionVectB1);
       player1.pos.sub(correctionVectB1);
 
-      ball.vel = ball.vel.normalize().mult(distCorrectionB1*4);
+      ball.vel = ball.vel.normalize().mult(distCorrectionB1*PI);
       ball.vel.add(correctionVectB1);      
         
 
@@ -109,7 +120,7 @@ void ballCollisionP2 () {
     if (distVectMagB2 < minDistB2) {
       float distCorrectionB2 = (minDistB2-distVectMagB2)/2.0;
       PVector dB2 = distVectB2.copy();
-      PVector correctionVectB2 = dB2.normalize().mult(distCorrectionB2*4);
+      PVector correctionVectB2 = dB2.normalize().mult(distCorrectionB2*PI);
       player2.pos.add(correctionVectB2);
       ball.pos.sub(correctionVectB2);
       
