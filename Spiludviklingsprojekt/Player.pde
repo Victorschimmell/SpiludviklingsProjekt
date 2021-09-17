@@ -59,6 +59,7 @@ class Player {
     while(pos.x <= width-width+r){
     pos.x = pos.x+1;
     }
+
   
        //DASH   
     if (retning == 1)  {
@@ -75,8 +76,7 @@ class Player {
       pos.x = pos.x-2.5;
     }
     }
-    }
-  
+      }
   }
   ///////////////////BEVÆGER SPILLERE///////////////////
 

@@ -35,12 +35,12 @@ class Ball {
     while(pos.x <= width-width+r){
     pos.x = pos.x+1;
     }
-    
+
      if(pos.x >= width-r){
       pos.x = width/2;
       }
     
-    
+   
   }
 
 
