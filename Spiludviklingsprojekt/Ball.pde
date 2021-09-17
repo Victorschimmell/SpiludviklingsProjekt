@@ -85,6 +85,8 @@ void ballCollisionP1 () {
       player1.pos.sub(correctionVectB1);
 
       ball.vel = ball.vel.normalize().mult(distCorrectionB1);
+      ball.vel.add(correctionVectB1);      
+        
 
       println("CollidingPLAYER1");
     }
@@ -108,7 +110,7 @@ void ballCollisionP2 () {
       
       
       ball.vel = ball.vel.normalize().mult(distCorrectionB2);
-
+      ball.vel.sub(correctionVectB2);
       
 
       println("CollidingPLAYER2");
