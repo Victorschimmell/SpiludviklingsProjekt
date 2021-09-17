@@ -36,6 +36,11 @@ class Ball {
     pos.x = pos.x+1;
     }
     
+     if(pos.x >= width-r){
+      pos.x = width/2;
+      }
+    
+    
   }
 
 
@@ -84,7 +89,7 @@ void ballCollisionP1 () {
       ball.pos.add(correctionVectB1);
       player1.pos.sub(correctionVectB1);
 
-      ball.vel = ball.vel.normalize().mult(distCorrectionB1);
+      ball.vel = ball.vel.normalize().mult(distCorrectionB1*4);
       ball.vel.add(correctionVectB1);      
         
 
@@ -104,7 +109,7 @@ void ballCollisionP2 () {
     if (distVectMagB2 < minDistB2) {
       float distCorrectionB2 = (minDistB2-distVectMagB2)/2.0;
       PVector dB2 = distVectB2.copy();
-      PVector correctionVectB2 = dB2.normalize().mult(distCorrectionB2);
+      PVector correctionVectB2 = dB2.normalize().mult(distCorrectionB2*4);
       player2.pos.add(correctionVectB2);
       ball.pos.sub(correctionVectB2);
       
@@ -114,5 +119,7 @@ void ballCollisionP2 () {
       
 
       println("CollidingPLAYER2");
+      
+      
     }
   }
