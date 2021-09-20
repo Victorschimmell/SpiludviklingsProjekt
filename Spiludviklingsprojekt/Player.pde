@@ -96,11 +96,6 @@ int last;
       } 
       
 
-      /*  if (pressed[32]) {
-       
-       pos.x = pos.x+2.5;
-       }*/
-
       ///////////////////JUMP funktionalitet///////////////////
       pos.y+=vel.y;
 
@@ -126,10 +121,6 @@ int last;
       if (pressed[39]) { /* HØJRE PIL */
         pos.x+=fart;
       }
-
-      /*         if (pressed[190]) {
-       pos.x = pos.x-2.5;
-       }*/
 
       ///////////////////JUMP funktionalitet///////////////////
       pos.y+=vel.y;
