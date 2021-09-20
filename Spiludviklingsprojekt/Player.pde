@@ -45,13 +45,13 @@ int last;
     if (retning == 1){
     if(keyPressed){
       if(key == ' '){
-      pos.x = pos.x+2;
+      pos.x = pos.x+2.5;
       }
-    }
+    }  
       } else if (retning == 2) {
       if(keyPressed){
       if(key == '.'){
-      pos.x = pos.x-2;
+      pos.x = pos.x-2.5;
       }
       }
     }
