@@ -22,6 +22,7 @@ int last;
     if (retning ==1) {
 
       pos = new PVector( width/6, height-height/5-(r+4));
+      
     } else if (retning == 2) {
 
       pos = new PVector( width-width/6, height-height/5-(r+4));
@@ -39,7 +40,22 @@ int last;
     strokeWeight(3);
     fill(1);
     ellipse(pos.x, pos.y, r*2, r*2);
-
+    
+    //DASH! - spillerne kan fremskynde sig eller endda skyde ved at 'dash'.
+    if (retning == 1){
+    if(keyPressed){
+      if(key == ' '){
+      pos.x = pos.x+2;
+      }
+    }
+      } else if (retning == 2) {
+      if(keyPressed){
+      if(key == '.'){
+      pos.x = pos.x-2;
+      }
+      }
+    }
+    
 
     fill(255);
     textSize(42);
