@@ -7,7 +7,7 @@ class Player {
   PVector vel; //hastighed
   PVector gra; //gravity
 
-  int r = 40; // radius
+  int r = 50; // radius
   int fart = 2; // fart
   boolean inAir = false; // 
   boolean inAir2 = false;

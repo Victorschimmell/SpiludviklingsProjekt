@@ -73,7 +73,7 @@ class Ball {
 
       doOnce= true;
 
-      vel.y = vel.y* -0.95;
+      vel.y = vel.y* -0.9;
       pos.y = height-height/5-r;
 
       println("bounce");
@@ -91,7 +91,7 @@ void ballCollisionP1 () {
   //Tager de to vektorkoordinater for hver player og finder derefter afstanden mellem de to cirkler//
   float distVectMagB1 = distVectB1.mag();
   //Beskriver den mindste værdi som playerne må være indenfor hinandens radius, hvilket er den enes radius + den andens//
-  float minDistB1 = player1.r + ball.r;
+  float minDistB1 = player1.r+4 + ball.r;
 
   //Hvis afstanden mellem de to cirkler er mindre end den mindst tilladte afstand, så gør dette//
   if (distVectMagB1 < minDistB1) {
@@ -115,7 +115,7 @@ void ballCollisionP2 () {
   //Tager de to vektorkoordinater for hver player og finder derefter afstanden mellem de to cirkler//
   float distVectMagB2 = distVectB2.mag();
   //Beskriver den mindste værdi som playerne må være indenfor hinandens radius, hvilket er den enes radius + den andens//
-  float minDistB2 = ball.r + player2.r;
+  float minDistB2 = ball.r + player2.r+4;
 
   //Hvis afstanden mellem de to cirkler er mindre end den mindst tilladte afstand, så gør dette//
   if (distVectMagB2 < minDistB2) {
