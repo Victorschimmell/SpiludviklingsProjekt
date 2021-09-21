@@ -19,6 +19,7 @@ int P_antal = 100; // mængfde af particles
 //Text
 PFont font;
 PFont mono;
+PFont mono2;
 
 int scoreP1 = 0;
 int scoreP2 = 0;
@@ -39,6 +40,7 @@ void setup() {
   size(1400,800,P3D);
   font = createFont("SFTransRoboticsExtended.ttf", 72);
   mono = createFont("andalemo.ttf", 40);
+  mono2 = createFont("andalemo.ttf", 70);
 
   frameRate(240);
   smooth();

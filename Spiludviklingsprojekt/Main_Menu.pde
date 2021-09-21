@@ -47,6 +47,10 @@ void drawMenu(){
     fill(0, 0, 0, 40);
     rect(0, height/8*1.2*2, width/5, height/8, 10, 10, 10, 10);
   }
+  textSize(70);
+  textFont(mono2);
+  fill(0, 0, 0, 70);
+  text("Evals Soccer",0,-(height/4));
   popMatrix();
 }
 
