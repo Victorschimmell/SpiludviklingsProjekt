@@ -43,19 +43,16 @@ int last;
     
     //DASH! - spillerne kan fremskynde sig eller endda skyde ved at 'dash'.
     if (retning == 1){
-    if(keyPressed){
-      if(key == ' '){
-      pos.x = pos.x+1;
-      }
+      if(pressed[32]){
+      pos.x = pos.x+2.5;
     }  
-      } else if (retning == 2) {
-      if(keyPressed){
-      if(key == '.'){
-      pos.x = pos.x-1;
-      }
+      } 
+      
+      if (retning == 2) {
+      if(pressed[75]){
+      pos.x = pos.x-2.5;
       }
     }
-    
 
     fill(255);
     textSize(42);
