@@ -34,6 +34,7 @@ Player player2 = new Player(2); // 2 = retning = 2
 Goal  goal1 = new Goal(1);
 Goal goal2 = new Goal(2);
 
+
 void setup() {
 
   ///////////////////Basic///////////////////

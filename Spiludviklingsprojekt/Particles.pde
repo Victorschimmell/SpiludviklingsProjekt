@@ -5,26 +5,30 @@ class ParticleSystem
   ArrayList<Particle> particleArr;
   int parts; //dele af partiklerne
 
-  ParticleSystem()
+  color c;
+  ParticleSystem(color C_)
   {
+    c = C_;
+
     particleArr = new ArrayList<Particle>();
     parts = 0;
     for (int z = 0; z < P_antal; z++)
     {
-      Particle p = new Particle(); //giver dem et sted at spawne
+      Particle p = new Particle(c); //giver dem et sted at spawne
       p.x = 0; 
       p.y = 0;
       particleArr.add(p);
       parts++;
     }
   }
-  ParticleSystem(float x, float y)
+  ParticleSystem(float x, float y, color C_)
   {
+    c = C_;
     particleArr = new ArrayList<Particle>(); //gør at der kan tilføjes flere eksplosioner
     parts = 0;
     for (int z = 0; z < P_antal; z++)
     {
-      Particle p = new Particle();
+      Particle p = new Particle(c);
       p.x = x;
       p.y = y;
       particleArr.add(p);
@@ -63,8 +67,10 @@ class Particle { //tegner particler
 
   boolean visible; //om particles kan ses eller ej
 
-  Particle() {
+  color c;
+  Particle(color C_) {
     reset();
+    c = C_;
   }
 
   void reset() {
@@ -79,12 +85,10 @@ class Particle { //tegner particler
   void render() {
     if (visible) {
 
-        fill(252, 15, 192); // angiv farve før brug
-
-        noStroke();
-        ellipse(x, y, 2 * r, 2 * r);
-      }
-    
+      fill(c); // angiv farve før brug
+      noStroke();
+      ellipse(x, y, 2 * r, 2 * r);
+    }
   }
 
   void update() { //bevæger partiklerne i givne retninger

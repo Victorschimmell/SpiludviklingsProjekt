@@ -31,15 +31,15 @@ class Ball {
 
     //Betingelser for Ball
 
-      if ((pos.x > width) || (pos.x < 0)) {
-    vel.x = vel.x * -1;
-  }
+    if ((pos.x > width) || (pos.x < 0)) {
+      vel.x = vel.x * -1;
+    }
 
     //Når bolden rammer ind i målet, begrænses den, og spawner bolden i midten igen
     if (pos.y >= height-425) {
       if (pos.x >= width-r-0.2) {
         scoreP1 ++;
-        systems.add(new ParticleSystem(pos.x, pos.y));
+        systems.add(new ParticleSystem(pos.x, pos.y, color(252, 15, 192)));
         pos.x = width/2;
         pos.y = height/5;
         ball.vel.sub(ball.vel);
@@ -47,12 +47,12 @@ class Ball {
       }
       if (pos.x <= width-width+r+0.2) {
         scoreP2 ++;
-        systems.add(new ParticleSystem(pos.x, pos.y));
+        systems.add(new ParticleSystem(pos.x, pos.y, color(252, 15, 192)));
         pos.x = width/2;
         pos.y = height/5;
         ball.vel.sub(ball.vel);
         ball.acc.sub(ball.acc);
-       }
+      }
     }
   }
 
@@ -77,13 +77,13 @@ class Ball {
 
 
     if (doOnce) {
-      systems.add(new ParticleSystem(pos.x, pos.y+r));
+      systems.add(new ParticleSystem(pos.x, pos.y+r, color(252, 15, 192)));
     }
   }
 }
 void ballCollisionP1 () {
   //Finder (x,Y) koordinater til player2 og player2, og trækker derefter player1's værdier fra player2, hvilket beskriver distancen mellem de to cirkler//
-  PVector distVectB1 = PVector.sub(ball.pos, player1.pos);
+  PVector distVectB1 = PVector.sub(player1.pos, ball.pos);
   //Tager de to vektorkoordinater for hver player og finder derefter afstanden mellem de to cirkler//
   float distVectMagB1 = distVectB1.mag();
   //Beskriver den mindste værdi som playerne må være indenfor hinandens radius, hvilket er den enes radius + den andens//
@@ -93,12 +93,13 @@ void ballCollisionP1 () {
   if (distVectMagB1 < minDistB1) {
     float distCorrectionB1 = (minDistB1-distVectMagB1)/2.0;
     PVector dB1 = distVectB1.copy();
-    PVector correctionVectB1 = dB1.normalize().mult(distCorrectionB1);
-    ball.pos.add(correctionVectB1);
-    player1.pos.sub(correctionVectB1);
+    PVector correctionVectB1 = dB1.normalize().mult(distCorrectionB1*PI);
+    player1.pos.add(correctionVectB1);
+    ball.pos.sub(correctionVectB1);
 
-    ball.vel = ball.vel.normalize().mult(distCorrectionB1*PI);
-    ball.vel.add(correctionVectB1);      
+
+    ball.vel = ball.vel.normalize().mult(distCorrectionB1);
+    ball.vel.sub(correctionVectB1);      
 
 
     println("CollidingPLAYER1");
@@ -111,7 +112,7 @@ void ballCollisionP2 () {
   //Tager de to vektorkoordinater for hver player og finder derefter afstanden mellem de to cirkler//
   float distVectMagB2 = distVectB2.mag();
   //Beskriver den mindste værdi som playerne må være indenfor hinandens radius, hvilket er den enes radius + den andens//
-  float minDistB2 = ball.r + player2.r+4;
+  float minDistB2 = player2.r+4 + ball.r ;
 
   //Hvis afstanden mellem de to cirkler er mindre end den mindst tilladte afstand, så gør dette//
   if (distVectMagB2 < minDistB2) {
@@ -127,5 +128,4 @@ void ballCollisionP2 () {
 
     println("CollidingPLAYER2");
   }
- 
 }
