@@ -18,7 +18,7 @@ class Ball {
     acc = new PVector(0, 0);
     gra = new PVector (0, 0.1);
 
-    r = 15;
+    r = 25;
   }
 
   ///////////////////TEGNER BOLD///////////////////
