@@ -15,6 +15,7 @@ void drawOption(){
   //Ball-option
   // - Draw button (10, 15, 20, 30)
   noStroke();
-  ellipse(0,0,ball.r*2,ball.r*2);
+  ellipse(-(width/5+width*3/20),0,ball.r*2,ball.r*2);
+  
   popMatrix();
 }
