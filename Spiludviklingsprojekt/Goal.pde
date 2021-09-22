@@ -79,6 +79,17 @@ if ( Goalnr == 1) {
       rect(pos2.x+60+2.5, pos2.y+220, -50-5, 2);
     }
       
+    if (Goalnr == 1) {
+  if (ball.vel.y >= pos.y) {
+  ball.vel.y = ball.vel.y * -1;
+  }
+  }
+  
+    if (Goalnr == 2) {
+  if (ball.vel.y >= pos2.y) {
+  ball.vel.y = ball.vel.y * -1;
+  }
+  }
   
 }
 }
