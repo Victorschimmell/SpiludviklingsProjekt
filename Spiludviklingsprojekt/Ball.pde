@@ -75,7 +75,6 @@ class Ball {
       pos.y = height-height/5-r;
     }
 
-
     if (doOnce) {
       if(vel.y<-2){
         systems.add(new ParticleSystem(pos.x, pos.y+r, color(252, 15, 192)));
