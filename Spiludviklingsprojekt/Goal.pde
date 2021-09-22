@@ -81,7 +81,7 @@ if ( Goalnr == 1) {
       
       //Collision mellem overlægger og ball
     if (Goalnr == 1) {
-  if ((ball.pos.y <= pos.y) && (ball.pos.x <= pos.x)) {
+  if ((ball.pos.y <= pos.y) && (ball.pos.x <= pos.x+10)) {
   ball.vel.y *= -1;
   }
   }
