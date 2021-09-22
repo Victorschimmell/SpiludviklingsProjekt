@@ -40,6 +40,7 @@ int last;
     strokeWeight(3);
     fill(1);
     ellipse(pos.x, pos.y, r*2, r*2);
+   
     
     //DASH! - spillerne kan fremskynde sig eller endda skyde ved at 'dash'.
     if (retning == 1){
@@ -53,6 +54,16 @@ int last;
       pos.x = pos.x-2.5;
       }
     }
+
+if(retning == 1) {
+  stroke(200,200,195);
+line(pos.x-50, pos.y, goal1.pos.x+5,goal1.pos.y+215);
+}
+if(retning == 2) {
+  stroke(200,200,195);
+line(pos.x+50, pos.y, goal2.pos2.x+5, goal2.pos2.y+215);
+}
+
 
     fill(255);
     textSize(42);

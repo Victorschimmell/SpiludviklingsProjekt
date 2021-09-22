@@ -35,8 +35,6 @@ class Ball {
     vel.x = vel.x * -1;
   }
 
-
-
     //Når bolden rammer ind i målet, begrænses den, og spawner bolden i midten igen
     if (pos.y >= height-425) {
       if (pos.x >= width-r-0.2) {
@@ -129,4 +127,5 @@ void ballCollisionP2 () {
 
     println("CollidingPLAYER2");
   }
+ 
 }
