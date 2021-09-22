@@ -12,8 +12,8 @@ class Player {
   boolean inAir = false; // 
   boolean inAir2 = false;
 
-int count = 0;
-int last;
+  int count = 0;
+  int last;
 
   ///////////////////CONSTRUCTOR///////////////////
   Player(int Retning) { // retning = 1 = player 1, retning = 2 = player 2
@@ -22,7 +22,6 @@ int last;
     if (retning ==1) {
 
       pos = new PVector( width/6, height-height/5-(r+4));
-      
     } else if (retning == 2) {
 
       pos = new PVector( width-width/6, height-height/5-(r+4));
@@ -30,6 +29,7 @@ int last;
 
     vel = new PVector(0, 2);
     gra = new PVector(0, 0.1);
+    fart = 2;
   }
 
 
@@ -54,6 +54,7 @@ int last;
       pos.x = pos.x-2.5;
       }
     }
+
 
 if(retning == 1) {
   stroke(200,200,195);
@@ -93,18 +94,15 @@ line(pos.x+50, pos.y, goal2.pos2.x+5, goal2.pos2.y+215);
 
     if (retning == 1) {  ///////////////////PLAYER 1///////////////////
       if (pressed[65]) { /* A */
-      
+
         pos.x-=fart;
       }
 
       if (pressed[68]) { /* D */
         pos.x+=fart;
-      
-    
       } 
-      
 
-      ///////////////////JUMP funktionalitet///////////////////
+      ///////////////////JUMP funktionalitet 1///////////////////
       pos.y+=vel.y;
 
 
@@ -117,8 +115,15 @@ line(pos.x+50, pos.y, goal2.pos2.x+5, goal2.pos2.y+215);
       }
 
       if (pressed[87] && !inAir) { /* W */
-        vel.y=-fart*3;
+        vel.y-=6;
         inAir= true;
+      }
+      ///////////////////DASH 1///////////////////
+      if (pressed[32]) {
+        fart = 5;
+        println("speed");
+      } else {
+        fart = 2;
       }
     } else if ( retning == 2) {  ///////////////////PLAYER 2///////////////////
 
@@ -130,7 +135,7 @@ line(pos.x+50, pos.y, goal2.pos2.x+5, goal2.pos2.y+215);
         pos.x+=fart;
       }
 
-      ///////////////////JUMP funktionalitet///////////////////
+      ///////////////////JUMP funktionalitet 2///////////////////
       pos.y+=vel.y;
 
 
@@ -142,9 +147,16 @@ line(pos.x+50, pos.y, goal2.pos2.x+5, goal2.pos2.y+215);
         inAir2 = false;
       }
 
-      if (pressed[38] && !inAir2) { /* W */
-        vel.y=-fart*3;
+      if (pressed[38] && !inAir2) { /* OP PIL */
+        vel.y-=6;
         inAir2= true;
+      }
+      ///////////////////DASH 2///////////////////
+      if (pressed[75]) {
+
+        fart = 5;
+      } else {
+        fart = 2;
       }
     }
   }
