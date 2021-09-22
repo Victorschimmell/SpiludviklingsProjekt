@@ -64,7 +64,7 @@ class Ball {
     vel.add(gra);
     vel.add(acc);
 
-    vel.limit(20);
+    vel.limit(10);
 
     doOnce = false;
     if (pos.y+r > height-height/5) {
@@ -75,9 +75,10 @@ class Ball {
       pos.y = height-height/5-r;
     }
 
-
     if (doOnce) {
-      systems.add(new ParticleSystem(pos.x, pos.y+r, color(252, 15, 192)));
+      if(vel.y<-2){
+        systems.add(new ParticleSystem(pos.x, pos.y+r, color(252, 15, 192)));
+      }
     }
   }
 }
