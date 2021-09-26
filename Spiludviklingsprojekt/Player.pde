@@ -10,7 +10,7 @@ class Player {
   PVector newLeg; //position of legggg
 
   int r = 50; // radius
-  int legr = r/2; 
+  int legr;
   int fart = 2; // fart
   boolean inAir = false; // 
   boolean inAir2 = false;
@@ -34,6 +34,8 @@ class Player {
     vel = new PVector(0, 2);
     gra = new PVector(0, 0.1);
     fart = 2;
+    
+    legr = r/2;
   }
 
 
@@ -49,9 +51,9 @@ class Player {
     fill(255);
     textSize(42);
     if (retning == 1) {
-      text(":)", pos.x, pos.y-5);
+      text("P1", pos.x, pos.y-5);
     } else if (retning ==2) {
-      text(":D", pos.x, pos.y-5);
+      text("P2", pos.x, pos.y-5);
     }
     strokeWeight(1);
 
@@ -174,7 +176,7 @@ class Player {
     newLeg = new PVector(pos.x, pos.y);
 
     if (retning == 1) {  ///////////////////PLAYER 1///////////////////
-      if (pressed[70]) {
+      if (pressed[70]) { // F
         stroke(255);
         angle+=1*easing;
         newLeg = new PVector((legPos.x-pos.x)*cos(angle)+(legPos.y-pos.y)*sin(angle)+pos.x, (legPos.y-pos.y)*cos(angle)+(legPos.x-pos.x)*sin(angle)+pos.y);
@@ -183,7 +185,7 @@ class Player {
         angle = 0;
       }
     } else if ( retning == 2) {  ///////////////////PLAYER 2///////////////////
-      if (pressed[74]) {
+      if (pressed[74]) { //K 
         stroke(255);
         
         angle-=1*easing;

@@ -54,6 +54,17 @@ class Ball {
         ball.acc.sub(ball.acc);
       }
     }
+    if(scoreP1==endScore){
+      scene=0;
+      resetGame();
+      lastWinner="Player 1";
+      println("Player 1 won the game");
+    }else if(scoreP2==endScore){
+      scene=0;
+      resetGame();
+      lastWinner="Player 2";  
+      println("Player 2 won the game");
+    }
   }
 
   ///////////////////UPDATE BOLD VÆRDIER///////////////////

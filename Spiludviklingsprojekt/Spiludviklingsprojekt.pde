@@ -23,7 +23,8 @@ PFont mono2;
 
 int scoreP1 = 0;
 int scoreP2 = 0;
-int endScore = 15;
+int endScore = 10;
+String lastWinner;
 
 Ball ball = new Ball();
 
@@ -125,6 +126,9 @@ void drawScore() {
   fill(0, 0, 0);
   text(scoreP1, width*1/4, height*8/9);
   text(scoreP2, width*3/4, height*8/9);
+  fill(255,255,255);
+  textSize(20);
+  text("First to "+endScore, width/2, height/12);
 }
 
 ///////////////////udregner collision mellem 2 obejkter///////////////////
