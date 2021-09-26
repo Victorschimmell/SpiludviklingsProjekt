@@ -140,6 +140,7 @@ void collision (PVector pos1, PVector pos2, int r1, int r2) {
     float distCorrectionB1 = (minDistB1-distVectMagB1)/2.0;
     PVector dB1 = distVectB1.copy();
     PVector correctionVectB1 = dB1.normalize().mult(distCorrectionB1*PI);
+    
     pos1.add(correctionVectB1);
     pos2.sub(correctionVectB1);
 
@@ -150,15 +151,22 @@ void collision (PVector pos1, PVector pos2, int r1, int r2) {
     }
 
     //SPARK HINANDEN//
-    if (pos1 == player1.newLeg  &&  pos2 == player2.pos) {
+    if (pos1 == player1.newLeg  &&  pos2 == player2.pos && distVectMagB1 < minDistB1) {
 
       player2.vel = player2.vel.normalize().mult(distCorrectionB1);
       player2.vel.sub(correctionVectB1);
+     
       systems.add(new ParticleSystem(player2.pos.x, player2.pos.y, color(252, 0, 0)));
-    } else if ( pos2 == player2.newLeg && pos2 == player1.pos) {
+      
+      
+      
+    } 
+    
+    if (pos1 == player2.newLeg && pos2 == player1.pos && distVectMagB1 < minDistB1) {
       player1.vel = player1.vel.normalize().mult(distCorrectionB1);
       player1.vel.sub(correctionVectB1);
-      systems.add(new ParticleSystem(player2.pos.x, player2.pos.y, color(252, 0, 0)));
+     
+      systems.add(new ParticleSystem(player1.pos.x, player1.pos.y, color(252, 0, 0)));
     }
   }
 }

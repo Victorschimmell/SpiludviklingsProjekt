@@ -10,6 +10,7 @@ class Player {
   PVector newLeg; //position of legggg
 
   int r = 50; // radius
+  int legr = r/2; 
   int fart = 2; // fart
   boolean inAir = false; // 
   boolean inAir2 = false;
@@ -169,7 +170,7 @@ class Player {
 
     noStroke();
     fill(1);
-    legPos = new PVector(pos.x, pos.y+r+r/2);
+    legPos = new PVector(pos.x, pos.y+r+legr);
     newLeg = new PVector(pos.x, pos.y);
 
     if (retning == 1) {  ///////////////////PLAYER 1///////////////////
@@ -195,6 +196,6 @@ class Player {
     }
     ///////////////////Position på leggggggg///////////////////
 
-    ellipse(newLeg.x, newLeg.y, r, r);
+    ellipse(newLeg.x, newLeg.y, legr*2, legr*2);
   }
 }
