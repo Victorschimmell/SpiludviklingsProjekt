@@ -112,6 +112,13 @@ void drawGrid(int count) {
 }
 ///////////////////tegner score///////////////////
 void drawScore() {
+
+  fill(255);
+  rect(0, height-height/5, width, height/5);
+  strokeWeight(5);
+  stroke(252, 15, 192); 
+  line(width/2, height-height/5+1, width/2, height);
+  strokeWeight(1);
   textSize(35);
   textFont(font);
   fill(0, 0, 0);
@@ -136,9 +143,20 @@ void collision (PVector pos1, PVector pos2, int r1, int r2) {
     pos1.add(correctionVectB1);
     pos2.sub(correctionVectB1);
 
+    //SPARK BOLDEN//
     if (pos2 == ball.pos) {
       ball.vel = ball.vel.normalize().mult(distCorrectionB1);
       ball.vel.sub(correctionVectB1);
+    }
+
+    //SPARK HINANDEN//
+    if (pos1 == player1.newLeg  &&  pos2 == player2.pos) {
+
+      player2.vel = player2.vel.normalize().mult(distCorrectionB1);
+      player2.vel.sub(correctionVectB1);
+    } else if ( pos2 == player2.newLeg && pos2 == player1.pos) {
+      player1.vel = player1.vel.normalize().mult(distCorrectionB1);
+      player1.vel.sub(correctionVectB1);
     }
   }
 }
