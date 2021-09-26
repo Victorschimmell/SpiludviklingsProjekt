@@ -11,10 +11,14 @@ void drawOption(){
   fill(0,0,0,70);
   textSize(50);
   text("DISPLAY",0,0);
-  
+  noStroke();
+  //Display ball
+  ellipse(0,height*2/10-ball.r/2-5,ball.r,ball.r);
+  //Display players
+  ellipse(width*2/5/3,height*2/10-player1.r/2-5,player1.r,player1.r);
+  ellipse(-width*2/5/3,height*2/10-player1.r/2-5,player1.r,player1.r);
   //Ball-option
   // - Draw button (10, 15, 20, 30)
-  noStroke();
   textSize(30);
   text("Change ball size",-width/3, -height/6);
   text("Change player size",width/3, -height/6);
