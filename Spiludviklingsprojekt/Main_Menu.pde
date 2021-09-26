@@ -67,6 +67,7 @@ void mousePressed(){
   }else if(scene==1){
     if (mouseX>15 && mouseY>15 && mouseX<85 && mouseY<85) {
       scene=0;
+      resetGame();
     }
   }else if(scene==2){
     if (mouseX>15 && mouseY>15 && mouseX<85 && mouseY<85) {

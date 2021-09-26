@@ -101,6 +101,8 @@ void mpButton(int c){
   if(c==1){
     endScore=endScore+1;
   }else if(c==2){
-    endScore=endScore-1;
+    if(endScore>1){
+      endScore=endScore-1;
+    }
   }
 }

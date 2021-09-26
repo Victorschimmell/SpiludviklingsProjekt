@@ -171,3 +171,12 @@ void collision (PVector pos1, PVector pos2, int r1, int r2) {
     }
   }
 }
+
+void resetGame(){
+  ball.pos = new PVector(width/2, height/5);
+  player1.pos = new PVector(width/6, height-height/5-(player1.r+4));
+  player2.pos = new PVector(width-width/6, height-height/5-(player2.r+4));
+  scoreP1 = 0;
+  scoreP2 = 0;
+  println("Game has been reset");
+}
