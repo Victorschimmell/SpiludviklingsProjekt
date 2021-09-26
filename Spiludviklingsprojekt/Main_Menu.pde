@@ -51,6 +51,10 @@ void drawMenu(){
   textFont(mono2);
   fill(0, 0, 0, 70);
   text("Evals Soccer",0,-(height/4));
+  if(lastWinner=="Player 1" || lastWinner=="Player 2"){
+    textSize(35);
+    text("Last winner: "+lastWinner,0,-(height/8));
+  }
   popMatrix();
 }
 
