@@ -69,9 +69,9 @@ class Player {
     stroke(#c8c8c3);
     strokeWeight(2.5);
     if (retning == 1) {
-      line(width-width+60, height/2, pos.x-ball.r*2-10, pos.y);
+      line(60, goal1.pos.y+220, pos.x-r, pos.y);
     } else if (retning == 2) {
-      line(width-60, height/2, pos.x+ball.r*2+10, pos.y);
+      line(width-60, goal2.pos2.y+220, pos.x+r, pos.y);
     }
 
     //Kædebegrænsning!
@@ -177,7 +177,7 @@ class Player {
         stroke(255);
         angle+=1*easing;
         newLeg = new PVector((legPos.x-pos.x)*cos(angle)+(legPos.y-pos.y)*sin(angle)+pos.x, (legPos.y-pos.y)*cos(angle)+(legPos.x-pos.x)*sin(angle)+pos.y);
-        if (angle >= 45*easing) angle= 0;
+        if (angle >= 40*easing) angle= 0;
       } else {
         angle = 0;
       }
@@ -187,7 +187,7 @@ class Player {
         
         angle-=1*easing;
         newLeg = new PVector((legPos.x-pos.x)*cos(angle)+(legPos.y-pos.y)*sin(angle)+pos.x, (legPos.y-pos.y)*cos(angle)+(legPos.x-pos.x)*sin(angle)+pos.y);
-        if (angle <= -45*easing) angle= 0;
+        if (angle <= -40*easing) angle= 0;
         println(angle);
       } else {
         angle = 0;

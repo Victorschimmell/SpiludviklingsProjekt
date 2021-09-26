@@ -31,7 +31,7 @@ Player player2 = new Player(2); // 2 = retning = 2
 
 //Goal constructor arguments, vi laver to nye objekter
 
-Goal  goal1 = new Goal(1);
+Goal goal1 = new Goal(1);
 Goal goal2 = new Goal(2);
 
 
@@ -154,9 +154,11 @@ void collision (PVector pos1, PVector pos2, int r1, int r2) {
 
       player2.vel = player2.vel.normalize().mult(distCorrectionB1);
       player2.vel.sub(correctionVectB1);
+      systems.add(new ParticleSystem(player2.pos.x, player2.pos.y, color(252, 0, 0)));
     } else if ( pos2 == player2.newLeg && pos2 == player1.pos) {
       player1.vel = player1.vel.normalize().mult(distCorrectionB1);
       player1.vel.sub(correctionVectB1);
+      systems.add(new ParticleSystem(player2.pos.x, player2.pos.y, color(252, 0, 0)));
     }
   }
 }
