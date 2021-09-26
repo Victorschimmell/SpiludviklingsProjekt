@@ -128,7 +128,7 @@ void drawScore() {
   text(scoreP2, width*3/4, height*8/9);
   fill(255,255,255);
   textSize(20);
-  text("Best of "+endScore, width/2, height/12);
+  text("First to "+endScore, width/2, height/12);
 }
 
 ///////////////////udregner collision mellem 2 obejkter///////////////////
