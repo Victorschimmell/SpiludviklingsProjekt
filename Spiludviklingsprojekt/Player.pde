@@ -6,14 +6,18 @@ class Player {
   PVector pos; //position
   PVector vel; //hastighed
   PVector gra; //gravity
+  PVector legPos; //position of legggg
+  PVector newLeg; //position of legggg
 
   int r = 50; // radius
+  int legr = r/2; 
   int fart = 2; // fart
   boolean inAir = false; // 
   boolean inAir2 = false;
 
-  int count = 0;
   int last;
+  float angle = 0;
+  float easing = 0.05;
 
   ///////////////////CONSTRUCTOR///////////////////
   Player(int Retning) { // retning = 1 = player 1, retning = 2 = player 2
@@ -50,8 +54,8 @@ class Player {
       text(":D", pos.x, pos.y-5);
     }
     strokeWeight(1);
-   
-   
+
+
     //Borders på playernes pos.x, så de ikke kan gå ud fra banen på x
     while (pos.x >= width-r) {
       pos.x = pos.x-1;
@@ -59,31 +63,29 @@ class Player {
     while (pos.x <= r) {
       pos.x = pos.x+1;
     }
-    
-    
-   
-     //Kæder til spillere:
-   stroke(#c8c8c3);
+
+
+
+    //Kæder til spillere:
+    stroke(#c8c8c3);
     strokeWeight(2.5);
-    if(retning == 1){
-    line(width-width+60,height/2,pos.x-ball.r*2-10,pos.y);
-    } else if(retning == 2){
-    line(width-60,height/2,pos.x+ball.r*2+10,pos.y);
+    if (retning == 1) {
+      line(60, goal1.pos.y+220, pos.x-r, pos.y);
+    } else if (retning == 2) {
+      line(width-60, goal2.pos2.y+220, pos.x+r, pos.y);
     }
-    
+
     //Kædebegrænsning!
-    if(retning == 1) {
-    while (pos.x >= width/2+200+ball.r) {
-      pos.x = pos.x-1;
+    if (retning == 1) {
+      while (pos.x >= width/2+200+ball.r) {
+        pos.x = pos.x-1;
+      }
     }
+    if (retning == 2) {
+      while (pos.x <= width-width/2-200-ball.r) {
+        pos.x = pos.x+1;
+      }
     }
-    if(retning == 2) {
-    while (pos.x <= width-width/2-200-ball.r) {
-      pos.x = pos.x+1;
-    }
-    }
-    
-    
   }
 
   ///////////////////BEVÆGER SPILLERE///////////////////
@@ -155,27 +157,45 @@ class Player {
       ///////////////////DASH 2///////////////////
       if (pressed[75]) {
 
-        fart = 5;
+        fart = fart*2;
       } else {
         fart = 2;
       }
     }
   }
-  void collision () {
-    PVector distVect = PVector.sub(player2.pos, player1.pos);
 
-    float distVectMag = distVect.mag();
 
-    float minDist = player1.r + player2.r;
+  ///////////////////BEVÆGER LEGGGG///////////////////
+  void leg() {
 
-    if (distVectMag < minDist) {
-      float distCorrection = (minDist-distVectMag)/2.0;
-      PVector d = distVect.copy();
-      PVector correctionVect = d.normalize().mult(distCorrection);
-      player2.pos.add(correctionVect);
-      player1.pos.sub(correctionVect);
+    noStroke();
+    fill(1);
+    legPos = new PVector(pos.x, pos.y+r+legr);
+    newLeg = new PVector(pos.x, pos.y);
 
-      println("Colliding");
+    if (retning == 1) {  ///////////////////PLAYER 1///////////////////
+      if (pressed[70]) {
+        stroke(255);
+        angle+=1*easing;
+        newLeg = new PVector((legPos.x-pos.x)*cos(angle)+(legPos.y-pos.y)*sin(angle)+pos.x, (legPos.y-pos.y)*cos(angle)+(legPos.x-pos.x)*sin(angle)+pos.y);
+        if (angle >= 40*easing) angle= 0;
+      } else {
+        angle = 0;
+      }
+    } else if ( retning == 2) {  ///////////////////PLAYER 2///////////////////
+      if (pressed[74]) {
+        stroke(255);
+        
+        angle-=1*easing;
+        newLeg = new PVector((legPos.x-pos.x)*cos(angle)+(legPos.y-pos.y)*sin(angle)+pos.x, (legPos.y-pos.y)*cos(angle)+(legPos.x-pos.x)*sin(angle)+pos.y);
+        if (angle <= -40*easing) angle= 0;
+        println(angle);
+      } else {
+        angle = 0;
+      }
     }
+    ///////////////////Position på leggggggg///////////////////
+
+    ellipse(newLeg.x, newLeg.y, legr*2, legr*2);
   }
 }

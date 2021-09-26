@@ -2,32 +2,37 @@
 
 ///////////////////Spillet///////////////////
 void drawGame() {
-
+  rectMode(CORNER);
   background(1);
   drawGrid(gridCount);
-  rectMode(CORNER);
-  rect(0, height-height/5, width, height/5);
-  strokeWeight(5);
-  stroke(252, 15, 192); 
-  line(width/2, height-height/5+1, width/2, height);
-  strokeWeight(1);
-
-  drawScore();
-
 
   ///////////////////TEGNER PLAYER1, PLAYER 2///////////////////
+  player1.leg();
+  player2.leg();
+
   player1.display();
   player2.display();
+  
+
+
+  collision(player1.newLeg, player2.pos, player1.legr, player2.r);
+  collision(player2.newLeg, player1.pos, player2.legr, player1.r);
+  
+  collision(player1.pos, player2.pos, player1.r, player2.r);
+  collision(player2.pos, player1.pos, player2.r, player1.r);
+
   player1.update();
   player2.update();
-  player1.collision();
-  player2.collision();
 
   ///////////////////TEGNER BOLDEN///////////////////
   ball.update();
   ball.display();
-  ballCollisionP1();
-  ballCollisionP2();
+  
+  
+  collision(player1.pos, ball.pos, player1.r, ball.r);
+  collision(player2.pos, ball.pos, player2.r, ball.r);
+  collision(player1.newLeg, ball.pos, player1.legr*2, ball.r);
+  collision(player2.newLeg, ball.pos, player2.legr*2, ball.r);
 
   ///////////////////TEGNER GOAL///////////////////
   goal1.display();
@@ -40,4 +45,7 @@ void drawGame() {
     ps.update();
     ps.display();
   }
+
+  ///////////////////TEGNER SCOREBOARD///////////////////
+  drawScore();
 }
