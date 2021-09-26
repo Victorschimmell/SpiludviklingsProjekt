@@ -63,9 +63,17 @@ void mousePressed(){
     }else if(mouseX>width/2-width/10 && mouseX<width/2+width/10 && mouseY>height/2-height/16+height/8*1.2*2 && mouseY<height/2+height/16+height/8*1.2*2){
       exit();
     }
-  }else if(scene==1 || scene==2){
+  }else if(scene==1){
     if (mouseX>15 && mouseY>15 && mouseX<85 && mouseY<85) {
       scene=0;
+    }
+  }else if(scene==2){
+    if (mouseX>15 && mouseY>15 && mouseX<85 && mouseY<85) {
+      scene=0;
+    }else if (mouseX>width/2-width/3-width/10 && mouseX<width/2-width/3+width/10 && mouseY>height/2-height/16-height/16 && mouseY<height/2-height/16+height/16){
+      sizeBall();
+    }else if (mouseX>width/2+width/3-width/10 && mouseX<width/2+width/3+width/10 && mouseY>height/2-height/16-height/16 && mouseY<height/2-height/16+height/16){
+      sizePlayer();
     }
   }
 }
