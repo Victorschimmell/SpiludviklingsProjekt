@@ -22,6 +22,7 @@ void drawOption(){
   textSize(30);
   text("Change ball size",-width/3, -height/6);
   text("Change player size",width/3, -height/6);
+  //BALL SIZE BUTTON
   if (mouseX>width/2-width/3-width/10 && mouseX<width/2-width/3+width/10 && mouseY>height/2-height/16-height/16 && mouseY<height/2-height/16+height/16){
     fill(0, 0, 0, 70);
     text("Size: "+ball.r,-width/3,-height/16);
@@ -31,6 +32,7 @@ void drawOption(){
     text("Size: "+ball.r,-width/3,-height/16);
     rect(-width/3, -height/16, width/5, height/8, 10, 10, 10, 10);
   }
+  //PLAYER SIZE BUTTON
   if (mouseX>width/2+width/3-width/10 && mouseX<width/2+width/3+width/10 && mouseY>height/2-height/16-height/16 && mouseY<height/2-height/16+height/16){
     fill(0, 0, 0, 70);
     text("Size: "+player1.r,width/3,-height/16);
@@ -40,6 +42,30 @@ void drawOption(){
     text("Size: "+player1.r,width/3,-height/16);
     rect(width/3, -height/16, width/5, height/8, 10, 10, 10, 10);
   }
+  //SCORE SETTING
+  //rect(0,width/5,80,80);
+  textSize(30);
+  fill(0,0,0,70);
+  text("Matchpoint",0,width/5-width/20);
+  int tri=width/30;
+  if (mouseX>width/2-tri*2 && mouseX<width/2-tri && mouseY>height/2+width/5-tri/2 && mouseY<height/2+width/5+tri/2){
+    fill(0, 0, 0, 70);
+    triangle(0-tri*2,width/5,0-tri,width/5-tri/2,0-tri,width/5+tri/2);
+  }else{
+    fill(0, 0, 0, 40);
+    triangle(0-tri*2,width/5,0-tri,width/5-tri/2,0-tri,width/5+tri/2);
+  }
+  if (mouseX<width/2+tri*2 && mouseX>width/2+tri && mouseY>height/2+width/5-tri/2 && mouseY<height/2+width/5+tri/2){
+    fill(0, 0, 0, 70);
+    triangle(0+tri*2,width/5,0+tri,width/5-tri/2,0+tri,width/5+tri/2);
+  }else{
+    fill(0, 0, 0, 40);
+    triangle(0+tri*2,width/5,0+tri,width/5-tri/2,0+tri,width/5+tri/2);
+  }
+  
+  textSize(40);
+  fill(0, 0, 0, 70);
+  text(endScore,0,width/5-5);
   popMatrix();
 }
 
@@ -68,5 +94,13 @@ void sizePlayer(){
   }else if(player1.r==100){
     player1.r=30;
     player2.r=30;
+  }
+}
+
+void mpButton(int c){
+  if(c==1){
+    endScore=endScore+1;
+  }else if(c==2){
+    endScore=endScore-1;
   }
 }

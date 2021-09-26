@@ -23,6 +23,7 @@ PFont mono2;
 
 int scoreP1 = 0;
 int scoreP2 = 0;
+int endScore = 15;
 
 Ball ball = new Ball();
 

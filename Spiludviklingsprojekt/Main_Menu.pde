@@ -55,6 +55,7 @@ void drawMenu(){
 }
 
 void mousePressed(){
+  int tri=width/30;
   if(scene==0){
     if (mouseX>width/2-width/10 && mouseX<width/2+width/10 && mouseY>height/2-height/16 && mouseY<height/2+height/16 && scene == 0){
       scene=1;
@@ -74,6 +75,10 @@ void mousePressed(){
       sizeBall();
     }else if (mouseX>width/2+width/3-width/10 && mouseX<width/2+width/3+width/10 && mouseY>height/2-height/16-height/16 && mouseY<height/2-height/16+height/16){
       sizePlayer();
+    }else if (mouseX>width/2-tri*2 && mouseX<width/2-tri && mouseY>height/2+width/5-tri/2 && mouseY<height/2+width/5+tri/2){
+      mpButton(2);
+    }else if (mouseX<width/2+tri*2 && mouseX>width/2+tri && mouseY>height/2+width/5-tri/2 && mouseY<height/2+width/5+tri/2){
+      mpButton(1);
     }
   }
 }
