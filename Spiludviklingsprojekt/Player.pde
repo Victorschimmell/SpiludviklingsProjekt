@@ -70,9 +70,9 @@ class Player {
     stroke(#c8c8c3);
     strokeWeight(2.5);
     if (retning == 1) {
-      line(60, goal1.pos.y+220, pos.x-r, pos.y);
+      line(60, goal1.pos.y+60, pos.x-r, pos.y);
     } else if (retning == 2) {
-      line(width-60, goal2.pos2.y+220, pos.x+r, pos.y);
+      line(width-60, goal2.pos2.y+60, pos.x+r, pos.y);
     }
 
     //Kædebegrænsning!
