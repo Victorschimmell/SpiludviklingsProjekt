@@ -20,14 +20,16 @@ void drawGame() {
   player2.display();
   player1.update();
   player2.update();
-  player1.collision();
-  player2.collision();
+  collision(player1.pos, player2.pos, player1.r, player2.r);
+  collision(player2.pos, player1.pos, player2.r, player1.r);
+  player1.leg();
+  player2.leg();
 
   ///////////////////TEGNER BOLDEN///////////////////
   ball.update();
   ball.display();
-  ballCollisionP1();
-  ballCollisionP2();
+  collision(player1.pos, ball.pos, player1.r,ball.r);
+  collision(player2.pos, ball.pos, player2.r,ball.r);
 
   ///////////////////TEGNER GOAL///////////////////
   goal1.display();

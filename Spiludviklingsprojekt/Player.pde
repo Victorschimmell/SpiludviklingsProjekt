@@ -6,6 +6,7 @@ class Player {
   PVector pos; //position
   PVector vel; //hastighed
   PVector gra; //gravity
+  PVector legPos; //position of legggg
 
   int r = 50; // radius
   int fart = 2; // fart
@@ -161,21 +162,23 @@ class Player {
       }
     }
   }
-  void collision () {
-    PVector distVect = PVector.sub(player2.pos, player1.pos);
-
-    float distVectMag = distVect.mag();
-
-    float minDist = player1.r + player2.r;
-
-    if (distVectMag < minDist) {
-      float distCorrection = (minDist-distVectMag)/2.0;
-      PVector d = distVect.copy();
-      PVector correctionVect = d.normalize().mult(distCorrection);
-      player2.pos.add(correctionVect);
-      player1.pos.sub(correctionVect);
-
-      println("Colliding");
-    }
+  
+  
+///////////////////BEVÆGER LEGGGG///////////////////
+void leg(){
+  
+  if (retning == 1) {  ///////////////////PLAYER 1///////////////////
+  
+  
+  
+  
+  
+  } else if ( retning == 2) {  ///////////////////PLAYER 2///////////////////
+  
+  
+  
   }
+  
+}
+
 }

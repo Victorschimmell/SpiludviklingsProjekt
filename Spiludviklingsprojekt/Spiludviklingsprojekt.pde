@@ -38,7 +38,7 @@ Goal goal2 = new Goal(2);
 void setup() {
 
   ///////////////////Basic///////////////////
-  size(1400,800,P3D);
+  size(1400, 800, P3D);
   font = createFont("SFTransRoboticsExtended.ttf", 72);
   mono = createFont("andalemo.ttf", 40);
   mono2 = createFont("andalemo.ttf", 70);
@@ -110,11 +110,35 @@ void drawGrid(int count) {
   }
   popMatrix();
 }
-
+///////////////////tegner score///////////////////
 void drawScore() {
   textSize(35);
   textFont(font);
   fill(0, 0, 0);
   text(scoreP1, width*1/4, height*8/9);
   text(scoreP2, width*3/4, height*8/9);
+}
+
+///////////////////udregner collision mellem 2 obejkter///////////////////
+void collision (PVector pos1, PVector pos2, int r1, int r2) {
+  //Finder (x,Y) koordinater til ball og player2, og trækker derefter player1's værdier fra ball, hvilket beskriver distancen mellem de to cirkler//
+  PVector distVectB1 = PVector.sub(pos1, pos2);
+  //Tager de to vektorkoordinater for hver player og finder derefter afstanden mellem de to cirkler//
+  float distVectMagB1 = distVectB1.mag();
+  //Beskriver den mindste værdi som playerne må være indenfor hinandens radius, hvilket er den enes radius + den andens//
+  float minDistB1 = r1 + r2;
+
+  //Hvis afstanden mellem de to cirkler er mindre end den mindst tilladte afstand, så gør dette//
+  if (distVectMagB1 < minDistB1) {
+    float distCorrectionB1 = (minDistB1-distVectMagB1)/2.0;
+    PVector dB1 = distVectB1.copy();
+    PVector correctionVectB1 = dB1.normalize().mult(distCorrectionB1*PI);
+    pos1.add(correctionVectB1);
+    pos2.sub(correctionVectB1);
+
+    if (pos2 == ball.pos) {
+      ball.vel = ball.vel.normalize().mult(distCorrectionB1);
+      ball.vel.sub(correctionVectB1);
+    }
+  }
 }
