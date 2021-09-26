@@ -15,7 +15,22 @@ void drawOption(){
   //Ball-option
   // - Draw button (10, 15, 20, 30)
   noStroke();
-  ellipse(-(width/5+width*3/20),0,ball.r*2,ball.r*2);
-  
+  textSize(30);
+  text("Change ball size",-width/3, -height/6);
+  text("Change player size",width/3, -height/6);
+  if (mouseX>width/2-width/3-width/10 && mouseX<width/2-width/3+width/10 && mouseY>height/2-height/16-height/16 && mouseY<height/2-height/16+height/16){
+    fill(0, 0, 0, 70);
+    rect(-width/3, -height/16, width/5, height/8, 10, 10, 10, 10);
+  }else{
+    fill(0, 0, 0, 40);
+    rect(-width/3, -height/16, width/5, height/8, 10, 10, 10, 10);
+  }
+  if (mouseX>width/2+width/3-width/10 && mouseX<width/2+width/3+width/10 && mouseY>height/2-height/16-height/16 && mouseY<height/2-height/16+height/16){
+    fill(0, 0, 0, 70);
+    rect(width/3, -height/16, width/5, height/8, 10, 10, 10, 10);
+  }else{
+    fill(0, 0, 0, 40);
+    rect(width/3, -height/16, width/5, height/8, 10, 10, 10, 10);
+  }
   popMatrix();
 }
