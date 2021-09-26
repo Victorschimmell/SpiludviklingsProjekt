@@ -49,9 +49,9 @@ class Player {
     } else if (retning ==2) {
       text(":D", pos.x, pos.y-5);
     }
-
     strokeWeight(1);
-
+   
+   
     //Borders på playernes pos.x, så de ikke kan gå ud fra banen på x
     while (pos.x >= width-r) {
       pos.x = pos.x-1;
@@ -59,6 +59,31 @@ class Player {
     while (pos.x <= r) {
       pos.x = pos.x+1;
     }
+    
+    
+   
+     //Kæder til spillere:
+   stroke(#c8c8c3);
+    strokeWeight(2.5);
+    if(retning == 1){
+    line(width-width+60,height/2,pos.x-ball.r*2-10,pos.y);
+    } else if(retning == 2){
+    line(width-60,height/2,pos.x+ball.r*2+10,pos.y);
+    }
+    
+    //Kædebegrænsning!
+    if(retning == 1) {
+    while (pos.x >= width/2+200+ball.r) {
+      pos.x = pos.x-1;
+    }
+    }
+    if(retning == 2) {
+    while (pos.x <= width-width/2-200-ball.r) {
+      pos.x = pos.x+1;
+    }
+    }
+    
+    
   }
 
   ///////////////////BEVÆGER SPILLERE///////////////////
