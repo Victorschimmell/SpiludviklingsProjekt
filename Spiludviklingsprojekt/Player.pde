@@ -159,7 +159,7 @@ class Player {
       ///////////////////DASH 2///////////////////
       if (pressed[75]) {
 
-        fart = fart*2;
+        fart = 5;
       } else {
         fart = 2;
       }
