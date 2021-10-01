@@ -34,7 +34,7 @@ class Player {
     vel = new PVector(0, 2);
     gra = new PVector(0, 0.1);
     fart = 2;
-    
+
     legr = r/2;
   }
 
@@ -159,7 +159,8 @@ class Player {
       ///////////////////DASH 2///////////////////
       if (pressed[75]) {
 
-        fart = fart*2;
+        fart = 5;
+        println("speed");
       } else {
         fart = 2;
       }
@@ -187,7 +188,7 @@ class Player {
     } else if ( retning == 2) {  ///////////////////PLAYER 2///////////////////
       if (pressed[74]) { //K 
         stroke(255);
-        
+
         angle-=1*easing;
         newLeg = new PVector((legPos.x-pos.x)*cos(angle)+(legPos.y-pos.y)*sin(angle)+pos.x, (legPos.y-pos.y)*cos(angle)+(legPos.x-pos.x)*sin(angle)+pos.y);
         if (angle <= -40*easing) angle= 0;
