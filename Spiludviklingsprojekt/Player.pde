@@ -126,7 +126,6 @@ class Player {
       ///////////////////DASH 1///////////////////
       if (pressed[32]) {
         fart = 5;
-        println("speed");
       } else {
         fart = 2;
       }
@@ -160,7 +159,6 @@ class Player {
       if (pressed[75]) {
 
         fart = 5;
-        println("speed");
       } else {
         fart = 2;
       }
@@ -192,7 +190,6 @@ class Player {
         angle-=1*easing;
         newLeg = new PVector((legPos.x-pos.x)*cos(angle)+(legPos.y-pos.y)*sin(angle)+pos.x, (legPos.y-pos.y)*cos(angle)+(legPos.x-pos.x)*sin(angle)+pos.y);
         if (angle <= -40*easing) angle= 0;
-        println(angle);
       } else {
         angle = 0;
       }
