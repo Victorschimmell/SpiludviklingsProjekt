@@ -11,25 +11,17 @@ void drawMenu(){
   noStroke();
   pushMatrix();
   translate(width/2,height/2);
-  textSize(32);
+  textSize(42);
   textAlign(CENTER, CENTER);
   textFont(mono);
   //Play
   if (mouseX>width/2-width/10 && mouseX<width/2+width/10 && mouseY>height/2-height/16 && mouseY<height/2+height/16){
     fill(0, 0, 0, 70);
-    if(!loginReady){
-      text("Login to play",0,0);
-    }else{
-      text("Play Game",0,0);
-    }
+    text("Play Game",0,0);
     rect(0, 0, width/5, height/8, 10, 10, 10, 10);
   }else{
     fill(0,0,0,60);
-    if(!loginReady){
-      text("Login to play",0,0);
-    }else{
-      text("Play Game",0,0);
-    }
+    text("Play Game",0,0);
     fill(0, 0, 0, 40);
     rect(0, 0, width/5, height/8, 10, 10, 10, 10);
   }
@@ -63,69 +55,6 @@ void drawMenu(){
     textSize(35);
     text("Last winner: "+lastWinner,0,-(height/8));
   }
-  
-  ///////////////////Login//////////////////
-  fill(0, 0, 0, 70);
-  textSize(32);
-  text("Player 1 login",-(width/4+width/10-width/20),-height/15);
-  text("Player 2 login",width/4+width/10-width/20,-height/15);
-  textSize(24);
-  //Player 1
-  //------ Username player 1
-  if (mouseX>(width/2-(width/4+width/10-width/20))-width/10 && mouseX<(width/2-(width/4+width/10-width/20))+width/10 && mouseY>height/2-height/40 && mouseY<height/2+height/40 && scene == 0){
-    fill(255, 0, 0, 70);
-    rect(-(width/4+width/10-width/20),0,width/5,height/20,10,10,10,10);
-  }else{
-    fill(0, 0, 0, 40);
-    rect(-(width/4+width/10-width/20),0,width/5,height/20,10,10,10,10);
-  }
-  //------ Password player 1
-  if (mouseX>(width/2-(width/4+width/10-width/20))-width/10 && mouseX<(width/2-(width/4+width/10-width/20))+width/10 && mouseY>height/2+height/15-height/40 && mouseY<height/2+height/15+height/40 && scene == 0){
-    fill(0, 255, 0, 40);
-    rect(-(width/4+width/10-width/20),height/15,width/5,height/20,10,10,10,10);
-  }else{
-    fill(0, 0, 0, 40);
-    rect(-(width/4+width/10-width/20),height/15,width/5,height/20,10,10,10,10);
-  }
-  //------ Login button
-  if (mouseX>width/2-(width/4+width/10-width/20)-width/30 && mouseX<width/2-(width/4+width/10-width/20)+width/30 && mouseY>height/2+height/15*2-height/40 && mouseY<height/2+height/15*2+height/40 && scene == 0){
-    fill(0, 0, 0, 70);
-    text("Login",-(width/4+width/10-width/20),height/15*2);
-    rect(-(width/4+width/10-width/20),height/15*2,width/15,height/20,10,10,10,10);
-  }else{
-    fill(0, 0, 0, 40);
-    text("Login",-(width/4+width/10-width/20),height/15*2);
-    rect(-(width/4+width/10-width/20),height/15*2,width/15,height/20,10,10,10,10);
-  }
-  
-  
-  //Player 2
-  //------ Username player 2
-  if (mouseX>(width/2+width/4+width/10-width/20)-width/10 && mouseX<(width/2+width/4+width/10-width/20)+width/10 && mouseY>height/2-height/40 && mouseY<height/2+height/40 && scene == 0){
-    fill(255, 0, 0, 70);
-    rect(width/4+width/10-width/20,0,width/5,height/20,10,10,10,10);
-  }else{
-    fill(0, 0, 0, 40);
-    rect(width/4+width/10-width/20,0,width/5,height/20,10,10,10,10);
-  }
-  //------ Password player 2
-  if (mouseX>(width/2+width/4+width/10-width/20)-width/10 && mouseX<(width/2+width/4+width/10-width/20)+width/10 && mouseY>height/2+height/15-height/40 && mouseY<height/2+height/15+height/40 && scene == 0){
-    fill(0, 255, 0, 70);
-    rect(width/4+width/10-width/20,height/15,width/5,height/20,10,10,10,10);
-  }else{
-    fill(0, 0, 0, 40);
-    rect(width/4+width/10-width/20,height/15,width/5,height/20,10,10,10,10);
-  }
-  //------ Login button
-  if (mouseX>width/2+(width/4+width/10-width/20)-width/30 && mouseX<width/2+(width/4+width/10-width/20)+width/30 && mouseY>height/2+height/15*2-height/40 && mouseY<height/2+height/15*2+height/40 && scene == 0){
-    fill(0, 0, 0, 70);
-    text("Login",width/4+width/10-width/20,height/15*2);
-    rect(width/4+width/10-width/20,height/15*2,width/15,height/20,10,10,10,10);
-  }else{
-    fill(0, 0, 0, 40);
-    text("Login",width/4+width/10-width/20,height/15*2);
-    rect(width/4+width/10-width/20,height/15*2,width/15,height/20,10,10,10,10);
-  }
   popMatrix();
 }
 
@@ -156,26 +85,6 @@ void mousePressed(){
     }else if (mouseX<width/2+tri*2 && mouseX>width/2+tri && mouseY>height/2+width/5-tri/2 && mouseY<height/2+width/5+tri/2){
       mpButton(1);
     }
-  }
-}
-
-//Login Userinterface
-void mouseClicked(){
-  if(scene==0){
-    if (mouseX>(width/2-(width/4+width/10-width/20))-width/10 && mouseX<(width/2-(width/4+width/10-width/20))+width/10 && mouseY>height/2-height/40 && mouseY<height/2+height/40 && scene == 0){
-      toggleWrite=1;
-    }else if (mouseX>(width/2-(width/4+width/10-width/20))-width/10 && mouseX<(width/2-(width/4+width/10-width/20))+width/10 && mouseY>height/2+height/15-height/40 && mouseY<height/2+height/15+height/40 && scene == 0){
-      toggleWrite=2;
-    }else if (mouseX>(width/2+width/4+width/10-width/20)-width/10 && mouseX<(width/2+width/4+width/10-width/20)+width/10 && mouseY>height/2-height/40 && mouseY<height/2+height/40 && scene == 0){
-      toggleWrite=3;
-    }else if (mouseX>(width/2+width/4+width/10-width/20)-width/10 && mouseX<(width/2+width/4+width/10-width/20)+width/10 && mouseY>height/2+height/15-height/40 && mouseY<height/2+height/15+height/40 && scene == 0){
-      toggleWrite=4;
-    }else{
-      if(toggleWrite!=1){
-        toggleWrite=0;
-      }
-    }
-    println(toggleWrite);
   }
 }
 

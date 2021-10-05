@@ -44,7 +44,6 @@ class Ball {
         pos.y = height/5;
         ball.vel.sub(ball.vel);
         ball.acc.sub(ball.acc);
-        println("Player 1 scored!");
       }
       if (pos.x <= width-width+r+0.2) {
         scoreP2 ++;
@@ -53,7 +52,6 @@ class Ball {
         pos.y = height/5;
         ball.vel.sub(ball.vel);
         ball.acc.sub(ball.acc);
-        println("Player 2 scored!");
       }
     }
     if(scoreP1==endScore){
