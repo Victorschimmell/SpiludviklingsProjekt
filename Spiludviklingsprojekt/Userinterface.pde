@@ -25,3 +25,7 @@ void drawHome(int c){
   triangle(-35*0.7, -5, 35*0.7, -5, 0, -30*0.7);
   popMatrix();
 }
+
+void drawSignup(){
+  updateBackground();
+}

@@ -139,7 +139,7 @@ void mousePressed(){
     }else if(mouseX>width/2-width/10 && mouseX<width/2+width/10 && mouseY>height/2-height/16+height/8*1.2*2 && mouseY<height/2+height/16+height/8*1.2*2){
       exit();
     }
-  }else if(scene==1){
+  }else if(scene==1 || scene==3){
     if (mouseX>15 && mouseY>15 && mouseX<85 && mouseY<85) {
       scene=0;
       resetGame();
@@ -181,7 +181,7 @@ void mouseClicked(){
 
 void updateBackground() {
   // Vores betingelser tjekker, om farven skal blive lysere eller mørkere ved hjælp af vores boolean variabel; bgT
-  if (scene==0 || scene==2) {
+  if (scene==0 || scene==2 || scene==3) {
     background(bgColor, bgColor, bgColor);
     if (bgChange == true) { 
       if (bgColor>140) {
