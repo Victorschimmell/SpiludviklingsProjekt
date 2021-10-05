@@ -71,9 +71,23 @@ void drawMenu(){
   text("Player 2 login",width/4+width/10-width/20,-height/15);
   textSize(24);
   //Player 1
-  fill(0, 0, 0, 40);
-  rect(-(width/4+width/10-width/20),0,width/5,height/20,10,10,10,10);
-  rect(-(width/4+width/10-width/20),height/15,width/5,height/20,10,10,10,10);
+  //------ Username player 1
+  if (mouseX>(width/2-(width/4+width/10-width/20))-width/10 && mouseX<(width/2-(width/4+width/10-width/20))+width/10 && mouseY>height/2-height/40 && mouseY<height/2+height/40 && scene == 0){
+    fill(255, 0, 0, 70);
+    rect(-(width/4+width/10-width/20),0,width/5,height/20,10,10,10,10);
+  }else{
+    fill(0, 0, 0, 40);
+    rect(-(width/4+width/10-width/20),0,width/5,height/20,10,10,10,10);
+  }
+  //------ Password player 1
+  if (mouseX>(width/2-(width/4+width/10-width/20))-width/10 && mouseX<(width/2-(width/4+width/10-width/20))+width/10 && mouseY>height/2+height/15-height/40 && mouseY<height/2+height/15+height/40 && scene == 0){
+    fill(0, 255, 0, 40);
+    rect(-(width/4+width/10-width/20),height/15,width/5,height/20,10,10,10,10);
+  }else{
+    fill(0, 0, 0, 40);
+    rect(-(width/4+width/10-width/20),height/15,width/5,height/20,10,10,10,10);
+  }
+  //------ Login button
   if (mouseX>width/2-(width/4+width/10-width/20)-width/30 && mouseX<width/2-(width/4+width/10-width/20)+width/30 && mouseY>height/2+height/15*2-height/40 && mouseY<height/2+height/15*2+height/40 && scene == 0){
     fill(0, 0, 0, 70);
     text("Login",-(width/4+width/10-width/20),height/15*2);
@@ -83,10 +97,26 @@ void drawMenu(){
     text("Login",-(width/4+width/10-width/20),height/15*2);
     rect(-(width/4+width/10-width/20),height/15*2,width/15,height/20,10,10,10,10);
   }
+  
+  
   //Player 2
-  fill(0, 0, 0, 40);
-  rect(width/4+width/10-width/20,0,width/5,height/20,10,10,10,10);
-  rect(width/4+width/10-width/20,height/15,width/5,height/20,10,10,10,10);
+  //------ Username player 2
+  if (mouseX>(width/2+width/4+width/10-width/20)-width/10 && mouseX<(width/2+width/4+width/10-width/20)+width/10 && mouseY>height/2-height/40 && mouseY<height/2+height/40 && scene == 0){
+    fill(255, 0, 0, 70);
+    rect(width/4+width/10-width/20,0,width/5,height/20,10,10,10,10);
+  }else{
+    fill(0, 0, 0, 40);
+    rect(width/4+width/10-width/20,0,width/5,height/20,10,10,10,10);
+  }
+  //------ Password player 2
+  if (mouseX>(width/2+width/4+width/10-width/20)-width/10 && mouseX<(width/2+width/4+width/10-width/20)+width/10 && mouseY>height/2+height/15-height/40 && mouseY<height/2+height/15+height/40 && scene == 0){
+    fill(0, 255, 0, 70);
+    rect(width/4+width/10-width/20,height/15,width/5,height/20,10,10,10,10);
+  }else{
+    fill(0, 0, 0, 40);
+    rect(width/4+width/10-width/20,height/15,width/5,height/20,10,10,10,10);
+  }
+  //------ Login button
   if (mouseX>width/2+(width/4+width/10-width/20)-width/30 && mouseX<width/2+(width/4+width/10-width/20)+width/30 && mouseY>height/2+height/15*2-height/40 && mouseY<height/2+height/15*2+height/40 && scene == 0){
     fill(0, 0, 0, 70);
     text("Login",width/4+width/10-width/20,height/15*2);
@@ -126,6 +156,26 @@ void mousePressed(){
     }else if (mouseX<width/2+tri*2 && mouseX>width/2+tri && mouseY>height/2+width/5-tri/2 && mouseY<height/2+width/5+tri/2){
       mpButton(1);
     }
+  }
+}
+
+//Login Userinterface
+void mouseClicked(){
+  if(scene==0){
+    if (mouseX>(width/2-(width/4+width/10-width/20))-width/10 && mouseX<(width/2-(width/4+width/10-width/20))+width/10 && mouseY>height/2-height/40 && mouseY<height/2+height/40 && scene == 0){
+      toggleWrite=1;
+    }else if (mouseX>(width/2-(width/4+width/10-width/20))-width/10 && mouseX<(width/2-(width/4+width/10-width/20))+width/10 && mouseY>height/2+height/15-height/40 && mouseY<height/2+height/15+height/40 && scene == 0){
+      toggleWrite=2;
+    }else if (mouseX>(width/2+width/4+width/10-width/20)-width/10 && mouseX<(width/2+width/4+width/10-width/20)+width/10 && mouseY>height/2-height/40 && mouseY<height/2+height/40 && scene == 0){
+      toggleWrite=3;
+    }else if (mouseX>(width/2+width/4+width/10-width/20)-width/10 && mouseX<(width/2+width/4+width/10-width/20)+width/10 && mouseY>height/2+height/15-height/40 && mouseY<height/2+height/15+height/40 && scene == 0){
+      toggleWrite=4;
+    }else{
+      if(toggleWrite!=1){
+        toggleWrite=0;
+      }
+    }
+    println(toggleWrite);
   }
 }
 

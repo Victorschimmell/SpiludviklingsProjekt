@@ -37,6 +37,7 @@ Goal goal1 = new Goal(1);
 Goal goal2 = new Goal(2);
 
 //Login
+int toggleWrite = 0; //Integer som beskriver den login-tekst boks, som man skriver i.
 boolean loginP1 = false;
 boolean loginP2 = false;
 boolean loginReady = false;
