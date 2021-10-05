@@ -36,19 +36,13 @@ Player player2 = new Player(2); // 2 = retning = 2
 Goal goal1 = new Goal(1);
 Goal goal2 = new Goal(2);
 
-//Login
-int toggleWrite = 0; //Integer som beskriver den login-tekst boks, som man skriver i.
-boolean loginP1 = false;
-boolean loginP2 = false;
-boolean loginReady = false;
-
 
 void setup() {
 
   ///////////////////Basic///////////////////
   size(1400, 800, P3D);
   font = createFont("SFTransRoboticsExtended.ttf", 72);
-  mono = createFont("andalemo.ttf", 32);
+  mono = createFont("andalemo.ttf", 40);
   mono2 = createFont("andalemo.ttf", 70);
 
   frameRate(240);
@@ -188,5 +182,5 @@ void resetGame(){
   player2.pos = new PVector(width-width/6, height-height/5-(player2.r+4));
   scoreP1 = 0;
   scoreP2 = 0;
-  println("Game has been reset.");
+  println("Game has been reset");
 }
