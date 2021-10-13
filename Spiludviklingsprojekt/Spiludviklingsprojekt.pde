@@ -113,9 +113,6 @@ void drawText(){
 void keyPressed() {
   pressed[keyCode] = true;
   typeText();
-  if(key=='b'){
-    scene = 3;
-  }
 }
 
 void keyReleased() {
