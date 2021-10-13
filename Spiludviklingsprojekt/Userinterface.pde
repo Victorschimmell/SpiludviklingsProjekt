@@ -28,4 +28,5 @@ void drawHome(int c){
 
 void drawSignup(){
   updateBackground();
+  
 }

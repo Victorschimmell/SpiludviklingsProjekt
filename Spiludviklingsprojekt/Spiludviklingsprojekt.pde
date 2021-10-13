@@ -101,6 +101,7 @@ void keyPressed() {
   pressed[keyCode] = true;
   
     Username1.typeText();
+
 }
 
 void keyReleased() {

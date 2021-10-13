@@ -88,7 +88,7 @@ void drawMenu(){
     fill(0, 0, 0, 40);
     rect(-(width/4+width/10-width/20),height/15,width/5,height/20,10,10,10,10);
   }
-  //------ Login button
+  //------ Login button 1
   if (mouseX>width/2-(width/4+width/10-width/20)-width/30 && mouseX<width/2-(width/4+width/10-width/20)+width/30 && mouseY>height/2+height/15*2-height/40 && mouseY<height/2+height/15*2+height/40 && scene == 0){
     fill(0, 0, 0, 70);
     text("Login",-(width/4+width/10-width/20),height/15*2);
@@ -117,7 +117,7 @@ void drawMenu(){
     fill(0, 0, 0, 40);
     rect(width/4+width/10-width/20,height/15,width/5,height/20,10,10,10,10);
   }
-  //------ Login button
+  //------ Login button 2
   if (mouseX>width/2+(width/4+width/10-width/20)-width/30 && mouseX<width/2+(width/4+width/10-width/20)+width/30 && mouseY>height/2+height/15*2-height/40 && mouseY<height/2+height/15*2+height/40 && scene == 0){
     fill(0, 0, 0, 70);
     text("Login",width/4+width/10-width/20,height/15*2);
@@ -131,6 +131,17 @@ void drawMenu(){
 
   Username1.drawText();
   
+  
+  //SIGNUP-BUTTON
+  if (mouseX>width/16-width/26 && mouseX<width/16+width/26 && mouseY>height/14-height/40 && mouseY<height/14+height/40 && scene == 0){
+    fill(0, 0, 0, 70);
+    text("Sign up",-width/2+width/16,-height/2+height/14);
+    rect(-width/2+width/16,-height/2+height/14,width/13,height/20,10,10,10,10);
+  }else{
+    fill(0, 0, 0, 40);
+    text("Sign up",-width/2+width/16,-height/2+height/14);
+    rect(-width/2+width/16,-height/2+height/14,width/13,height/20,10,10,10,10);
+  }
   
   
   
@@ -146,11 +157,15 @@ void mousePressed(){
       scene=2;
     }else if(mouseX>width/2-width/10 && mouseX<width/2+width/10 && mouseY>height/2-height/16+height/8*1.2*2 && mouseY<height/2+height/16+height/8*1.2*2){
       exit();
+    }else if (mouseX>width/16-width/26 && mouseX<width/16+width/26 && mouseY>height/14-height/40 && mouseY<height/14+height/40 && scene == 0){
+      scene=3;
     }
   }else if(scene==1 || scene==3){
     if (mouseX>15 && mouseY>15 && mouseX<85 && mouseY<85) {
       scene=0;
-      resetGame();
+      if(scene==1){
+        resetGame();
+      }
     }
   }else if(scene==2){
     if (mouseX>15 && mouseY>15 && mouseX<85 && mouseY<85) {
