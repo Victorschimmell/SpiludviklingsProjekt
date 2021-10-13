@@ -148,6 +148,65 @@ void drawMenu(){
   popMatrix();
 }
 
+void drawSignup(){
+  updateBackground();
+  rectMode(CENTER);
+  textSize(24);
+  //USERNAME
+  pushMatrix();
+  translate(width/2,height/2);
+  if (mouseX>width/2-width/10 && mouseX<width/2+width/10 && mouseY>height/2-height/40 && mouseY<height/2+height/40 && scene == 3){
+    fill(0, 0, 0, 70);
+    rect(0,0,width/5,height/20,10,10,10,10);
+    text("Username",0,0);
+  }else{
+    fill(0, 0, 0, 40);
+    rect(0,0,width/5,height/20,10,10,10,10);
+    text("Username",0,0);
+  }
+  
+  //PASSWORD_1
+  if (mouseX>width/2-width/10 && mouseX<width/2+width/10 && mouseY>height/2-height/40+height/15 && mouseY<height/2+height/40+height/15 && scene == 3){
+    fill(0, 0, 0, 70);
+    rect(0,height/15,width/5,height/20,10,10,10,10);
+    text("Password",0,height/15);
+  }else{
+    fill(0, 0, 0, 40);
+    rect(0,height/15,width/5,height/20,10,10,10,10);
+    text("Password",0,height/15);
+  }
+  
+  //PASSWORD_2
+  if (mouseX>width/2-width/10 && mouseX<width/2+width/10 && mouseY>height/2-height/40+height/15*2 && mouseY<height/2+height/40+height/15*2 && scene == 3){
+    fill(0, 0, 0, 70);
+    rect(0,height/15*2,width/5,height/20,10,10,10,10);
+    text("Repeat password",0,height/15*2);
+  }else{
+    fill(0, 0, 0, 40);
+    rect(0,height/15*2,width/5,height/20,10,10,10,10);
+    text("Repeat password",0,height/15*2);
+  }
+  //SIGNUP
+  if (mouseX>width/2-width/24 && mouseX<width/2+width/24 && mouseY>height/2+height/15*2+height/15-height/40 && mouseY<height/2+height/15*2+height/15+height/40 && scene == 3){
+    fill(0, 0, 0, 70);
+    text("Sign up",0,height/15*2+height/15);
+    rect(0,height/15*2+height/15,width/12,height/20,10,10,10,10);
+  }else{
+    fill(0, 0, 0, 40);
+    text("Sign up",0,height/15*2+height/15);
+    rect(0,height/15*2+height/15,width/12,height/20,10,10,10,10);
+  }
+  
+  
+  textSize(70);
+  textFont(mono2);
+  fill(0, 0, 0, 70);
+  text("Sign Up",0,-(height/4));
+  textSize(35);
+  text("Fill in the boxes down below",0,-(height/8));
+  popMatrix();
+}
+
 void mousePressed(){
   int tri=width/30;
   if(scene==0){
