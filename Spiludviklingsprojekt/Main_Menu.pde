@@ -75,6 +75,7 @@ void drawMenu(){
   if (mouseX>(width/2-(width/4+width/10-width/20))-width/10 && mouseX<(width/2-(width/4+width/10-width/20))+width/10 && mouseY>height/2-height/40 && mouseY<height/2+height/40 && scene == 0){
     fill(255, 0, 0, 70);
     rect(-(width/4+width/10-width/20),0,width/5,height/20,10,10,10,10);
+    
   }else{
     fill(0, 0, 0, 40);
     rect(-(width/4+width/10-width/20),0,width/5,height/20,10,10,10,10);
@@ -126,6 +127,13 @@ void drawMenu(){
     text("Login",width/4+width/10-width/20,height/15*2);
     rect(width/4+width/10-width/20,height/15*2,width/15,height/20,10,10,10,10);
   }
+  
+
+  Username1.drawText();
+  
+  
+  
+  
   popMatrix();
 }
 
@@ -163,7 +171,8 @@ void mousePressed(){
 void mouseClicked(){
   if(scene==0){
     if (mouseX>(width/2-(width/4+width/10-width/20))-width/10 && mouseX<(width/2-(width/4+width/10-width/20))+width/10 && mouseY>height/2-height/40 && mouseY<height/2+height/40 && scene == 0){
-      toggleWrite=1;
+     toggleWrite =1;
+      Username1.isTyping = true;
     }else if (mouseX>(width/2-(width/4+width/10-width/20))-width/10 && mouseX<(width/2-(width/4+width/10-width/20))+width/10 && mouseY>height/2+height/15-height/40 && mouseY<height/2+height/15+height/40 && scene == 0){
       toggleWrite=2;
     }else if (mouseX>(width/2+width/4+width/10-width/20)-width/10 && mouseX<(width/2+width/4+width/10-width/20)+width/10 && mouseY>height/2-height/40 && mouseY<height/2+height/40 && scene == 0){
@@ -173,6 +182,7 @@ void mouseClicked(){
     }else{
       if(toggleWrite!=1){
         toggleWrite=0;
+        Username1.isTyping = false;
       }
     }
     println(toggleWrite);

@@ -38,10 +38,12 @@ Goal goal2 = new Goal(2);
 
 //Login
 int toggleWrite = 0; //Integer som beskriver den login-tekst boks, som man skriver i.
-String typing = "";
 boolean loginP1 = false;
 boolean loginP2 = false;
 boolean loginReady = false;
+
+
+typing Username1 = new typing(-(width/4+width/10-width/20), 0);
 
 
 void setup() {
@@ -64,13 +66,15 @@ void setup() {
 
   goal1 = new Goal(1);
   goal2 = new Goal(2);
+  
+  Username1 = new typing(-(width/4+width/20), 0);
+  
 }
 void draw() {
   ///////////////////Scene selection///////////////////
 
   if ( scene == 0) {
     drawMenu();
-    drawText();
   } else if ( scene == 1) {
     drawGame();
     drawButton();
@@ -90,32 +94,13 @@ void draw() {
   text(round(frameRate) + " FPS", width-50*displayDensity(), 50*displayDensity());
 }
 
-void typeText(){
-  if (typing.length() < 15 && key != CODED && key != '\n' && key != BACKSPACE) {
-    typing = typing + key;
-  }else if (key == BACKSPACE && typing.length() > 0) {
-    typing = typing.substring(0, typing.length()-1);
-  }
-}
-
-void drawText(){
-  if(scene==0){
-    pushMatrix();
-    translate(width/2,height/2);
-    text(typing,0,-100);
-    popMatrix();
-  }
-}
-
 
 // Aflæse keycodes og herfra kunne bestemme hvilke kanpper der bliver trykket på
 ///////////////////KeyPressed///////////////////
 void keyPressed() {
   pressed[keyCode] = true;
-  typeText();
-  if(key=='b'){
-    scene = 3;
-  }
+  
+    Username1.typeText();
 }
 
 void keyReleased() {
