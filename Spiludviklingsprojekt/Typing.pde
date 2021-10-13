@@ -10,7 +10,7 @@ class typing {
 
   void typeText() {
    if(isTyping){
-    if (typing.length() < 15 && key != CODED && key != '\n' && key != BACKSPACE) {
+    if (typing.length() < 15 && key != CODED && key != '\n' && key != BACKSPACE && !pressed[32]) {
       typing = typing + key;
       println(typing);
     } else if (key == BACKSPACE && typing.length() > 0) {
