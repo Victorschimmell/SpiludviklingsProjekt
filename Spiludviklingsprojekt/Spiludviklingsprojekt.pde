@@ -46,6 +46,10 @@ boolean loginReady = false;
 typing Username1 = new typing(-(width/4+width/20), 0, 1);
 typing Password1 = new typing(-(width/4+width/20),height/15, 2);
 typing Username2 = new typing((width/4+width/20), 0, 3);
+typing Password2 = new typing((width/4+width/20),height/15, 4);
+typing Username3 = new typing(0, 0, 5);
+typing Password3 = new typing(0,height/15, 6);
+typing Password4 = new typing(0,height/15*2, 7);
 
 void setup() {
 
@@ -71,6 +75,10 @@ void setup() {
   Username1 = new typing(-(width/4+width/20), 0,1);
   Password1 = new typing(-(width/4+width/20), height/15, 2);
   Username2 = new typing((width/4+width/20), 0,3);
+  Password2 = new typing((width/4+width/20), height/15, 4);
+  Username3 = new typing(0, 0, 5);
+  Password3 = new typing(0,height/15, 6);
+  Password4 = new typing(0,height/15*2, 7);
 }
 void draw() {
   ///////////////////Scene selection///////////////////
@@ -105,6 +113,10 @@ void keyPressed() {
   Username1.typeText();
   Password1.typeText();
   Username2.typeText();
+  Password2.typeText();
+  Username3.typeText();
+  Password3.typeText();
+  Password4.typeText();
 }
 
 void keyReleased() {

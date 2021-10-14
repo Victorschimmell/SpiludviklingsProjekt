@@ -131,6 +131,7 @@ void drawMenu() {
   Username1.drawText();
   Password1.drawText();
   Username2.drawText();
+  Password2.drawText();
 
 
   //SIGNUP-BUTTON
@@ -159,33 +160,45 @@ void drawSignup() {
   if (mouseX>width/2-width/10 && mouseX<width/2+width/10 && mouseY>height/2-height/40 && mouseY<height/2+height/40 && scene == 3) {
     fill(0, 0, 0, 70);
     rect(0, 0, width/5, height/20, 10, 10, 10, 10);
-    text("Username", 0, 0);
+    if(Username3.typing[5] == ""){
+      text("Username", 0, 0);
+    }
   } else {
     fill(0, 0, 0, 40);
     rect(0, 0, width/5, height/20, 10, 10, 10, 10);
-    text("Username", 0, 0);
+    if(Username3.typing[5] == ""){
+      text("Username", 0, 0);
+    }
   }
 
   //PASSWORD_1
   if (mouseX>width/2-width/10 && mouseX<width/2+width/10 && mouseY>height/2-height/40+height/15 && mouseY<height/2+height/40+height/15 && scene == 3) {
     fill(0, 0, 0, 70);
     rect(0, height/15, width/5, height/20, 10, 10, 10, 10);
-    text("Password", 0, height/15);
+    if(Password3.typing[6] == ""){
+      text("Password", 0, height/15);
+    }
   } else {
     fill(0, 0, 0, 40);
     rect(0, height/15, width/5, height/20, 10, 10, 10, 10);
-    text("Password", 0, height/15);
+    if(Password3.typing[6] == ""){
+      text("Password", 0, height/15);
+    }
   }
 
   //PASSWORD_2
   if (mouseX>width/2-width/10 && mouseX<width/2+width/10 && mouseY>height/2-height/40+height/15*2 && mouseY<height/2+height/40+height/15*2 && scene == 3) {
     fill(0, 0, 0, 70);
     rect(0, height/15*2, width/5, height/20, 10, 10, 10, 10);
-    text("Repeat password", 0, height/15*2);
+    if(Password4.typing[7] == ""){
+      text("Repeat password", 0, height/15*2);
+    }
   } else {
     fill(0, 0, 0, 40);
     rect(0, height/15*2, width/5, height/20, 10, 10, 10, 10);
-    text("Repeat password", 0, height/15*2);
+    if(Password4.typing[7] == ""){
+      text("Repeat password", 0, height/15*2);
+    }
   }
   //SIGNUP
   if (mouseX>width/2-width/24 && mouseX<width/2+width/24 && mouseY>height/2+height/15*2+height/15-height/40 && mouseY<height/2+height/15*2+height/15+height/40 && scene == 3) {
@@ -197,6 +210,10 @@ void drawSignup() {
     text("Sign up", 0, height/15*2+height/15);
     rect(0, height/15*2+height/15, width/12, height/20, 10, 10, 10, 10);
   }
+  
+  Username3.drawText();
+  Password3.drawText();
+  Password4.drawText();
 
 
   textSize(70);
@@ -222,10 +239,14 @@ void mousePressed() {
     }
   } else if (scene==1 || scene==3) {
     if (mouseX>15 && mouseY>15 && mouseX<85 && mouseY<85) {
-      scene=0;
       if (scene==1) {
         resetGame();
+      }else if (scene==3){
+        Username3.typing[5] = "";
+        Password3.typing[6] = "";
+        Password4.typing[7] = "";
       }
+      scene=0;
     }
   } else if (scene==2) {
     if (mouseX>15 && mouseY>15 && mouseX<85 && mouseY<85) {
@@ -244,7 +265,7 @@ void mousePressed() {
 
 //Login Userinterface
 void mouseClicked() {
-  if (scene==0) {
+  if (scene==0 || scene==3) {
     if (mouseX>(width/2-(width/4+width/10-width/20))-width/10 && mouseX<(width/2-(width/4+width/10-width/20))+width/10 && mouseY>height/2-height/40 && mouseY<height/2+height/40 && scene == 0) {
       toggleWrite =1;
     } else if (mouseX>(width/2-(width/4+width/10-width/20))-width/10 && mouseX<(width/2-(width/4+width/10-width/20))+width/10 && mouseY>height/2+height/15-height/40 && mouseY<height/2+height/15+height/40 && scene == 0) {
@@ -253,7 +274,13 @@ void mouseClicked() {
       toggleWrite=3;
     } else if (mouseX>(width/2+width/4+width/10-width/20)-width/10 && mouseX<(width/2+width/4+width/10-width/20)+width/10 && mouseY>height/2+height/15-height/40 && mouseY<height/2+height/15+height/40 && scene == 0) {
       toggleWrite=4;
-    } else {
+    } else if (mouseX>width/2-width/10 && mouseX<width/2+width/10 && mouseY>height/2-height/40 && mouseY<height/2+height/40 && scene == 3) {
+      toggleWrite=5;
+    }else if (mouseX>width/2-width/10 && mouseX<width/2+width/10 && mouseY>height/2-height/40+height/15 && mouseY<height/2+height/40+height/15 && scene == 3) {
+      toggleWrite=6;
+    }else if (mouseX>width/2-width/10 && mouseX<width/2+width/10 && mouseY>height/2-height/40+height/15*2 && mouseY<height/2+height/40+height/15*2 && scene == 3) {
+      toggleWrite=7;
+    }else{
       toggleWrite=0;
     }
   }
@@ -312,6 +339,38 @@ void isTyping() {
       Username2.isTyping = true;
     } else { 
       Username2.isTyping = false;
+    }
+    break;
+    
+  case 4:
+    if (toggleWrite ==4) {
+      Password2.isTyping = true;
+    } else { 
+      Password2.isTyping = false;
+    }
+    break;
+    
+  case 5:
+    if (toggleWrite ==5) {
+      Username3.isTyping = true;
+    } else { 
+      Username3.isTyping = false;
+    }
+    break;
+    
+  case 6:
+    if (toggleWrite ==6) {
+      Password3.isTyping = true;
+    } else { 
+      Password3.isTyping = false;
+    }
+    break;
+    
+  case 7:
+    if (toggleWrite ==7) {
+      Password4.isTyping = true;
+    } else { 
+      Password4.isTyping = false;
     }
     break;
 

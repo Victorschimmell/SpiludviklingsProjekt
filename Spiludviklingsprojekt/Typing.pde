@@ -1,7 +1,7 @@
 class typing {
 
-  String[] typing = { "", "", "", "", ""};
-  String[] tPassword = {"", "", "", "", ""};
+  String[] typing = { "", "", "", "", "", "", "", ""};
+  String[] tPassword = {"", "", "", "", "", "", "", ""};
   boolean isTyping = false;
   PVector pos;
   int current;
@@ -27,7 +27,7 @@ class typing {
   }
 
   void drawText() {
-    if (current ==2 || current == 4) {
+    if (current ==2 || current == 4 || current == 6 || current == 7) {
       text(tPassword[current], pos.x, pos.y);
     } else {
       text(typing[current], pos.x, pos.y);
