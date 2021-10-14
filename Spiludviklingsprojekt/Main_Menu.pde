@@ -129,6 +129,7 @@ void drawMenu() {
 
 
   Username1.drawText();
+  Password1.drawText();
   Username2.drawText();
 
 
@@ -299,6 +300,11 @@ void isTyping() {
     break;
 
   case 2:
+  if (toggleWrite == 2) {
+      Password1.isTyping = true;
+    } else { 
+      Password1.isTyping = false;
+    }
     break;
 
   case 3:

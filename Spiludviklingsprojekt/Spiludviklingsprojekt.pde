@@ -44,6 +44,7 @@ boolean loginReady = false;
 
 
 typing Username1 = new typing(-(width/4+width/20), 0, 1);
+typing Password1 = new typing(-(width/4+width/20),height/15, 2);
 typing Username2 = new typing((width/4+width/20), 0, 3);
 
 void setup() {
@@ -68,6 +69,7 @@ void setup() {
   goal2 = new Goal(2);
 
   Username1 = new typing(-(width/4+width/20), 0,1);
+  Password1 = new typing(-(width/4+width/20), height/15, 2);
   Username2 = new typing((width/4+width/20), 0,3);
 }
 void draw() {
@@ -101,6 +103,7 @@ void keyPressed() {
   pressed[keyCode] = true;
 
   Username1.typeText();
+  Password1.typeText();
   Username2.typeText();
 }
 
