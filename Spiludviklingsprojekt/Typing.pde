@@ -3,8 +3,10 @@ class typing {
   String[] typing = { "","","","",""};
   boolean isTyping = false;
   PVector pos;
+  int current;
 
-  typing( float x, float y) {
+  typing( float x, float y, int nr) {
+    current = nr;
     pos = new PVector(x, y);
   }
 
@@ -20,7 +22,7 @@ class typing {
   }
 
   void drawText() {
-      text(typing[toggleWrite], pos.x,pos.y);      
+      text(typing[current], pos.x,pos.y);      
     
   }
 }

@@ -43,8 +43,8 @@ boolean loginP2 = false;
 boolean loginReady = false;
 
 
-typing Username1 = new typing(-(width/4+width/20), 0);
-typing Username2 = new typing((width/4+width/20), 0);
+typing Username1 = new typing(-(width/4+width/20), 0, 1);
+typing Username2 = new typing((width/4+width/20), 0, 3);
 
 void setup() {
 
@@ -67,8 +67,8 @@ void setup() {
   goal1 = new Goal(1);
   goal2 = new Goal(2);
 
-  Username1 = new typing(-(width/4+width/20), 0);
-  Username2 = new typing((width/4+width/20), 0);
+  Username1 = new typing(-(width/4+width/20), 0,1);
+  Username2 = new typing((width/4+width/20), 0,3);
 }
 void draw() {
   ///////////////////Scene selection///////////////////
