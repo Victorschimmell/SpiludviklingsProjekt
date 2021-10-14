@@ -65,18 +65,6 @@ class Player {
     while (pos.x <= r) {
       pos.x = pos.x+1;
     }
-
-    //Kædebegrænsning!
-    if (retning == 1) {
-      while (pos.x >= width/2+200+ball.r) {
-        pos.x = pos.x-1;
-      }
-    }
-    if (retning == 2) {
-      while (pos.x <= width-width/2-200-ball.r) {
-        pos.x = pos.x+1;
-      }
-    }
   }
 
   ///////////////////BEVÆGER SPILLERE///////////////////
