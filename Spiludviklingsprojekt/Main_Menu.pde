@@ -75,17 +75,29 @@ void drawMenu() {
   if (mouseX>(width/2-(width/4+width/10-width/20))-width/10 && mouseX<(width/2-(width/4+width/10-width/20))+width/10 && mouseY>height/2-height/40 && mouseY<height/2+height/40 && scene == 0) {
     fill(255, 0, 0, 70);
     rect(-(width/4+width/10-width/20), 0, width/5, height/20, 10, 10, 10, 10);
+    if (Username1.typing[1] == "") {
+      text("Username", -(width/4+width/10-width/20), 0);
+    }
   } else {
     fill(0, 0, 0, 40);
     rect(-(width/4+width/10-width/20), 0, width/5, height/20, 10, 10, 10, 10);
+    if (Username1.typing[1] == "") {
+      text("Username", -(width/4+width/10-width/20), 0);
+    }
   }
   //------ Password player 1
   if (mouseX>(width/2-(width/4+width/10-width/20))-width/10 && mouseX<(width/2-(width/4+width/10-width/20))+width/10 && mouseY>height/2+height/15-height/40 && mouseY<height/2+height/15+height/40 && scene == 0) {
     fill(0, 255, 0, 40);
     rect(-(width/4+width/10-width/20), height/15, width/5, height/20, 10, 10, 10, 10);
+    if (Password1.typing[2] == "") {
+      text("Password", -(width/4+width/10-width/20), height/15);
+    }
   } else {
     fill(0, 0, 0, 40);
     rect(-(width/4+width/10-width/20), height/15, width/5, height/20, 10, 10, 10, 10);
+    if (Password1.typing[2] == "") {
+      text("Password", -(width/4+width/10-width/20), height/15);
+    }
   }
   //------ Login button 1
   if (mouseX>width/2-(width/4+width/10-width/20)-width/30 && mouseX<width/2-(width/4+width/10-width/20)+width/30 && mouseY>height/2+height/15*2-height/40 && mouseY<height/2+height/15*2+height/40 && scene == 0) {
@@ -104,17 +116,29 @@ void drawMenu() {
   if (mouseX>(width/2+width/4+width/10-width/20)-width/10 && mouseX<(width/2+width/4+width/10-width/20)+width/10 && mouseY>height/2-height/40 && mouseY<height/2+height/40 && scene == 0) {
     fill(255, 0, 0, 70);
     rect(width/4+width/10-width/20, 0, width/5, height/20, 10, 10, 10, 10);
+    if (Username2.typing[3] == "") {
+      text("Username", (width/4+width/10-width/20), 0);
+    }
   } else {
     fill(0, 0, 0, 40);
     rect(width/4+width/10-width/20, 0, width/5, height/20, 10, 10, 10, 10);
+    if (Username2.typing[3] == "") {
+      text("Username", (width/4+width/10-width/20), 0);
+    }
   }
   //------ Password player 2
   if (mouseX>(width/2+width/4+width/10-width/20)-width/10 && mouseX<(width/2+width/4+width/10-width/20)+width/10 && mouseY>height/2+height/15-height/40 && mouseY<height/2+height/15+height/40 && scene == 0) {
     fill(0, 255, 0, 70);
     rect(width/4+width/10-width/20, height/15, width/5, height/20, 10, 10, 10, 10);
+    if (Password2.typing[4] == "") {
+      text("Password", (width/4+width/10-width/20), height/15);
+    }
   } else {
     fill(0, 0, 0, 40);
     rect(width/4+width/10-width/20, height/15, width/5, height/20, 10, 10, 10, 10);
+    if (Password2.typing[4] == "") {
+      text("Password", (width/4+width/10-width/20), height/15);
+    }
   }
   //------ Login button 2
   if (mouseX>width/2+(width/4+width/10-width/20)-width/30 && mouseX<width/2+(width/4+width/10-width/20)+width/30 && mouseY>height/2+height/15*2-height/40 && mouseY<height/2+height/15*2+height/40 && scene == 0) {
@@ -236,6 +260,12 @@ void mousePressed() {
       exit();
     } else if (mouseX>width/16-width/26 && mouseX<width/16+width/26 && mouseY>height/14-height/40 && mouseY<height/14+height/40 && scene == 0) {
       scene=3;
+      Username1.typing[1] = "";
+      Username2.typing[3] = "";
+      Password1.typing[2] = "";
+      Password2.typing[4] = "";
+      Password1.tPassword[2] = "";
+      Password2.tPassword[4] = "";
     }
   } else if (scene==1 || scene==3) {
     if (mouseX>15 && mouseY>15 && mouseX<85 && mouseY<85) {
