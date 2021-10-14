@@ -247,23 +247,20 @@ void mouseClicked(){
   if(scene==0){
     if (mouseX>(width/2-(width/4+width/10-width/20))-width/10 && mouseX<(width/2-(width/4+width/10-width/20))+width/10 && mouseY>height/2-height/40 && mouseY<height/2+height/40 && scene == 0){
      toggleWrite =1;
-      Username1.isTyping = true;
     }else if (mouseX>(width/2-(width/4+width/10-width/20))-width/10 && mouseX<(width/2-(width/4+width/10-width/20))+width/10 && mouseY>height/2+height/15-height/40 && mouseY<height/2+height/15+height/40 && scene == 0){
       toggleWrite=2;
     }else if (mouseX>(width/2+width/4+width/10-width/20)-width/10 && mouseX<(width/2+width/4+width/10-width/20)+width/10 && mouseY>height/2-height/40 && mouseY<height/2+height/40 && scene == 0){
       toggleWrite=3;
-      Username2.isTyping = true;
     }else if (mouseX>(width/2+width/4+width/10-width/20)-width/10 && mouseX<(width/2+width/4+width/10-width/20)+width/10 && mouseY>height/2+height/15-height/40 && mouseY<height/2+height/15+height/40 && scene == 0){
       toggleWrite=4;
     }else{
-      if(toggleWrite!=1){
         toggleWrite=0;
-        Username1.isTyping = false;
       }
     }
     println(toggleWrite);
+    isTyping();
   }
-}
+  
 
 void updateBackground() {
   // Vores betingelser tjekker, om farven skal blive lysere eller mørkere ved hjælp af vores boolean variabel; bgT
@@ -283,4 +280,39 @@ void updateBackground() {
       }
     }
   }
+}
+
+void isTyping(){
+  
+  switch(toggleWrite){
+    
+    case 0:
+    Username1.isTyping = false;
+    Username2.isTyping = false;
+    break;
+    
+    case 1:
+    if(toggleWrite == 1){
+    Username1.isTyping = true;
+    } else{ Username1.isTyping = false;
+    }
+    break;
+    
+    case 2:
+    break;
+    
+    case 3:
+    if(toggleWrite ==3){
+     Username2.isTyping = true;
+    } else{ Username2.isTyping = false;
+    }
+    break;
+    
+    
+    default:
+    toggleWrite = 0;
+    break;
+  }
+  
+  
 }
