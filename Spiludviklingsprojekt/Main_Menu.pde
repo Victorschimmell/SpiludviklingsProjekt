@@ -160,13 +160,13 @@ void drawSignup() {
   if (mouseX>width/2-width/10 && mouseX<width/2+width/10 && mouseY>height/2-height/40 && mouseY<height/2+height/40 && scene == 3) {
     fill(0, 0, 0, 70);
     rect(0, 0, width/5, height/20, 10, 10, 10, 10);
-    if(Username3.typing[5] == ""){
+    if (Username3.typing[5] == "") {
       text("Username", 0, 0);
     }
   } else {
     fill(0, 0, 0, 40);
     rect(0, 0, width/5, height/20, 10, 10, 10, 10);
-    if(Username3.typing[5] == ""){
+    if (Username3.typing[5] == "") {
       text("Username", 0, 0);
     }
   }
@@ -175,13 +175,13 @@ void drawSignup() {
   if (mouseX>width/2-width/10 && mouseX<width/2+width/10 && mouseY>height/2-height/40+height/15 && mouseY<height/2+height/40+height/15 && scene == 3) {
     fill(0, 0, 0, 70);
     rect(0, height/15, width/5, height/20, 10, 10, 10, 10);
-    if(Password3.typing[6] == ""){
+    if (Password3.typing[6] == "") {
       text("Password", 0, height/15);
     }
   } else {
     fill(0, 0, 0, 40);
     rect(0, height/15, width/5, height/20, 10, 10, 10, 10);
-    if(Password3.typing[6] == ""){
+    if (Password3.typing[6] == "") {
       text("Password", 0, height/15);
     }
   }
@@ -190,13 +190,13 @@ void drawSignup() {
   if (mouseX>width/2-width/10 && mouseX<width/2+width/10 && mouseY>height/2-height/40+height/15*2 && mouseY<height/2+height/40+height/15*2 && scene == 3) {
     fill(0, 0, 0, 70);
     rect(0, height/15*2, width/5, height/20, 10, 10, 10, 10);
-    if(Password4.typing[7] == ""){
+    if (Password4.typing[7] == "") {
       text("Repeat password", 0, height/15*2);
     }
   } else {
     fill(0, 0, 0, 40);
     rect(0, height/15*2, width/5, height/20, 10, 10, 10, 10);
-    if(Password4.typing[7] == ""){
+    if (Password4.typing[7] == "") {
       text("Repeat password", 0, height/15*2);
     }
   }
@@ -210,7 +210,7 @@ void drawSignup() {
     text("Sign up", 0, height/15*2+height/15);
     rect(0, height/15*2+height/15, width/12, height/20, 10, 10, 10, 10);
   }
-  
+
   Username3.drawText();
   Password3.drawText();
   Password4.drawText();
@@ -241,10 +241,12 @@ void mousePressed() {
     if (mouseX>15 && mouseY>15 && mouseX<85 && mouseY<85) {
       if (scene==1) {
         resetGame();
-      }else if (scene==3){
+      } else if (scene==3) {
         Username3.typing[5] = "";
         Password3.typing[6] = "";
         Password4.typing[7] = "";
+        Password3.tPassword[6] = "";
+        Password4.tPassword[7] = "";
       }
       scene=0;
     }
@@ -276,11 +278,11 @@ void mouseClicked() {
       toggleWrite=4;
     } else if (mouseX>width/2-width/10 && mouseX<width/2+width/10 && mouseY>height/2-height/40 && mouseY<height/2+height/40 && scene == 3) {
       toggleWrite=5;
-    }else if (mouseX>width/2-width/10 && mouseX<width/2+width/10 && mouseY>height/2-height/40+height/15 && mouseY<height/2+height/40+height/15 && scene == 3) {
+    } else if (mouseX>width/2-width/10 && mouseX<width/2+width/10 && mouseY>height/2-height/40+height/15 && mouseY<height/2+height/40+height/15 && scene == 3) {
       toggleWrite=6;
-    }else if (mouseX>width/2-width/10 && mouseX<width/2+width/10 && mouseY>height/2-height/40+height/15*2 && mouseY<height/2+height/40+height/15*2 && scene == 3) {
+    } else if (mouseX>width/2-width/10 && mouseX<width/2+width/10 && mouseY>height/2-height/40+height/15*2 && mouseY<height/2+height/40+height/15*2 && scene == 3) {
       toggleWrite=7;
-    }else{
+    } else {
       toggleWrite=0;
     }
   }
@@ -327,7 +329,7 @@ void isTyping() {
     break;
 
   case 2:
-  if (toggleWrite == 2) {
+    if (toggleWrite == 2) {
       Password1.isTyping = true;
     } else { 
       Password1.isTyping = false;
@@ -341,7 +343,7 @@ void isTyping() {
       Username2.isTyping = false;
     }
     break;
-    
+
   case 4:
     if (toggleWrite ==4) {
       Password2.isTyping = true;
@@ -349,7 +351,7 @@ void isTyping() {
       Password2.isTyping = false;
     }
     break;
-    
+
   case 5:
     if (toggleWrite ==5) {
       Username3.isTyping = true;
@@ -357,7 +359,7 @@ void isTyping() {
       Username3.isTyping = false;
     }
     break;
-    
+
   case 6:
     if (toggleWrite ==6) {
       Password3.isTyping = true;
@@ -365,7 +367,7 @@ void isTyping() {
       Password3.isTyping = false;
     }
     break;
-    
+
   case 7:
     if (toggleWrite ==7) {
       Password4.isTyping = true;
