@@ -17,12 +17,13 @@ class typing {
         typing[toggleWrite] = typing[toggleWrite] + key;
         tPassword[toggleWrite]+= "*";
 
-        println(typing[current]);
+        
       } else if (key == BACKSPACE && typing[toggleWrite].length() > 0) {
         typing[toggleWrite] = typing[toggleWrite].substring(0, typing[toggleWrite].length()-1);
         tPassword[toggleWrite] = tPassword[toggleWrite].substring(0, tPassword[toggleWrite].length()-1);
       }
     }
+    println(typing[current]);
   }
 
   void drawText() {
