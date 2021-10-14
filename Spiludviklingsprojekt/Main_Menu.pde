@@ -130,6 +130,7 @@ void drawMenu(){
   
 
   Username1.drawText();
+  Username2.drawText();
   
   
   //SIGNUP-BUTTON
@@ -251,6 +252,7 @@ void mouseClicked(){
       toggleWrite=2;
     }else if (mouseX>(width/2+width/4+width/10-width/20)-width/10 && mouseX<(width/2+width/4+width/10-width/20)+width/10 && mouseY>height/2-height/40 && mouseY<height/2+height/40 && scene == 0){
       toggleWrite=3;
+      Username2.isTyping = true;
     }else if (mouseX>(width/2+width/4+width/10-width/20)-width/10 && mouseX<(width/2+width/4+width/10-width/20)+width/10 && mouseY>height/2+height/15-height/40 && mouseY<height/2+height/15+height/40 && scene == 0){
       toggleWrite=4;
     }else{

@@ -43,8 +43,8 @@ boolean loginP2 = false;
 boolean loginReady = false;
 
 
-typing Username1 = new typing(-(width/4+width/10-width/20), 0);
-
+typing Username1 = new typing(-(width/4+width/20), 0);
+typing Username2 = new typing((width/4+width/20), 0);
 
 void setup() {
 
@@ -66,9 +66,9 @@ void setup() {
 
   goal1 = new Goal(1);
   goal2 = new Goal(2);
-  
+
   Username1 = new typing(-(width/4+width/20), 0);
-  
+  Username2 = new typing((width/4+width/20), 0);
 }
 void draw() {
   ///////////////////Scene selection///////////////////
@@ -99,9 +99,9 @@ void draw() {
 ///////////////////KeyPressed///////////////////
 void keyPressed() {
   pressed[keyCode] = true;
-  
-    Username1.typeText();
 
+  Username1.typeText();
+  Username2.typeText();
 }
 
 void keyReleased() {
@@ -144,7 +144,7 @@ void drawScore() {
   fill(0, 0, 0);
   text(scoreP1, width*1/4, height*8/9);
   text(scoreP2, width*3/4, height*8/9);
-  fill(255,255,255);
+  fill(255, 255, 255);
   textSize(20);
   text("First to "+endScore, width/2, height/12);
 }
@@ -163,7 +163,7 @@ void collision (PVector pos1, PVector pos2, int r1, int r2) {
     float distCorrectionB1 = (minDistB1-distVectMagB1)/2.0;
     PVector dB1 = distVectB1.copy();
     PVector correctionVectB1 = dB1.normalize().mult(distCorrectionB1*PI);
-    
+
     pos1.add(correctionVectB1);
     pos2.sub(correctionVectB1);
 
@@ -178,23 +178,20 @@ void collision (PVector pos1, PVector pos2, int r1, int r2) {
 
       player2.vel = player2.vel.normalize().mult(distCorrectionB1);
       player2.vel.sub(correctionVectB1);
-     
+
       systems.add(new ParticleSystem(player2.pos.x, player2.pos.y, color(252, 0, 0)));
-      
-      
-      
     } 
-    
+
     if (pos1 == player2.newLeg && pos2 == player1.pos && distVectMagB1 < minDistB1) {
       player1.vel = player1.vel.normalize().mult(distCorrectionB1);
       player1.vel.sub(correctionVectB1);
-     
+
       systems.add(new ParticleSystem(player1.pos.x, player1.pos.y, color(252, 0, 0)));
     }
   }
 }
 
-void resetGame(){
+void resetGame() {
   ball.pos = new PVector(width/2, height/5);
   player1.pos = new PVector(width/6, height-height/5-(player1.r+4));
   player2.pos = new PVector(width-width/6, height-height/5-(player2.r+4));
