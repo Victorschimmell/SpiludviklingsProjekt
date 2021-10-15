@@ -1,7 +1,10 @@
+import de.bezier.data.sql.*;
 ///////////////////Variabel//////////////////
+//Database
+SQLite db;
+
 //Screenstate
 int scene = 0;
-
 /*Gemmer "pressed keys" i en array, på grund af at processing "key" funktion er dårlig,
  og virker på basis af den sidste knap hvilket er trykket på. I stedet for bare at give
  hvilke knapper der bliver trykket på*/
@@ -44,15 +47,16 @@ boolean loginReady = false;
 
 
 typing Username1 = new typing(-(width/4+width/20), 0, 1);
-typing Password1 = new typing(-(width/4+width/20),height/15, 2);
+typing Password1 = new typing(-(width/4+width/20), height/15, 2);
 typing Username2 = new typing((width/4+width/20), 0, 3);
-typing Password2 = new typing((width/4+width/20),height/15, 4);
+typing Password2 = new typing((width/4+width/20), height/15, 4);
 typing Username3 = new typing(0, 0, 5);
-typing Password3 = new typing(0,height/15, 6);
-typing Password4 = new typing(0,height/15*2, 7);
+typing Password3 = new typing(0, height/15, 6);
+typing Password4 = new typing(0, height/15*2, 7);
 
 void setup() {
 
+  db = new SQLite( this, "UserDatabase.db" );
   ///////////////////Basic///////////////////
   size(1400, 800, P3D);
   font = createFont("SFTransRoboticsExtended.ttf", 72);
@@ -72,13 +76,13 @@ void setup() {
   goal1 = new Goal(1);
   goal2 = new Goal(2);
 
-  Username1 = new typing(-(width/4+width/20), 0,1);
+  Username1 = new typing(-(width/4+width/20), 0, 1);
   Password1 = new typing(-(width/4+width/20), height/15, 2);
-  Username2 = new typing((width/4+width/20), 0,3);
+  Username2 = new typing((width/4+width/20), 0, 3);
   Password2 = new typing((width/4+width/20), height/15, 4);
   Username3 = new typing(0, 0, 5);
-  Password3 = new typing(0,height/15, 6);
-  Password4 = new typing(0,height/15*2, 7);
+  Password3 = new typing(0, height/15, 6);
+  Password4 = new typing(0, height/15*2, 7);
 }
 void draw() {
   ///////////////////Scene selection///////////////////

@@ -2,10 +2,12 @@
 //Background
 float bgColor = 190;
 boolean bgChange = true;
-
+boolean signup = false;
 
 void drawMenu() {
+
   updateBackground();
+  signup = false;
   //Knapper
   rectMode(CENTER);
   noStroke();
@@ -312,10 +314,22 @@ void mouseClicked() {
       toggleWrite=6;
     } else if (mouseX>width/2-width/10 && mouseX<width/2+width/10 && mouseY>height/2-height/40+height/15*2 && mouseY<height/2+height/40+height/15*2 && scene == 3) {
       toggleWrite=7;
-    } else {
-      toggleWrite=0;
+    } else if (mouseX>width/2-width/20 && mouseX<width/2+width/20 && mouseY>height/2-height/40+height/15*3 && mouseY<height/2+height/40+height/15*3 && scene == 3) {
+      signup = true;  
+
+      Username3.DB();
+
+      if (signup) {
+
+
+        scene = 0;
+      } else {
+        println("Username already exists");
+      }
     }
   }
+
+
   println(toggleWrite);
   isTyping();
 }
