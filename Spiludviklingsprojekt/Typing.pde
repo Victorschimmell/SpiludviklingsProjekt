@@ -69,10 +69,12 @@ try {
   MessageDigest md = MessageDigest.getInstance("SHA-256"); 
   
   //Input er en tekst der skal "hashes"
-  String inputTekst = "et eller andet"; 
+  String inputTekst = tPassword[1];
+  String inputTekst2 = tPassword[2];
     
   //MassageDigest objektet "fodres" med teksten, der skal "hashes"
-    //md.update(inputTekst.getBytes());    
+    md.update(inputTekst.getBytes());   
+    md.update(inputTekst2.getBytes()); 
 
   //digest funktionen giver "hash-værdien", men i hexadecimale bytes 
   byte[] byteList = md.digest();
@@ -82,10 +84,15 @@ try {
   StringBuffer hashedValueBuffer = new StringBuffer();
   for (byte b : byteList)hashedValueBuffer.append(hex(b)); 
   
+ StringBuffer hashedValueBuffer2 = new StringBuffer();
+  for (byte b : byteList)hashedValueBuffer2.append(hex(b)); 
+  
   //Her udskrives den oprindelige tekst
   println("Den orindelige tekst: "+ inputTekst);
+  println("Den orindelige tekst: "+ inputTekst2);
   //Her udskrives "hash-værdien" af teksten
   println("SHA-256 værdien af teksten: " +hashedValueBuffer.toString());
+    println("SHA-256 værdien af teksten: " +hashedValueBuffer2.toString());
   
 }
 catch (Exception e) {
