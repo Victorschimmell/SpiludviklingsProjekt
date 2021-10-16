@@ -56,11 +56,8 @@ class typing {
  }
  */
  
- //Ofte "hashe's" passwords inden de gemmes i en database, så de ikke kan læses direkte af en hacker.
-//
-//Video om emnet:  "Hashing Algorithms and Security - Computerphile"
-//youtube-link:    https://youtu.be/b4b8ktEV4Bg
 
+//////////////Hashing//////////////
 import java.security.*;
 
 try {
