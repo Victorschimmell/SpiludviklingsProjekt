@@ -38,27 +38,21 @@ class typing {
       db.query("SELECT * FROM Users WHERE Username='" + typing[5] + "'");
       while (db.next())
         signup = false;
-    } 
-    if (signup) {
-      db.query("INSERT INTO Users(Username, Password) VALUES ('" + typing[5] + "', \"Hunde\"); ");
+    }
+    if (signup && detect) {
+      db.query("INSERT INTO Users(Username, Password) VALUES ('" + typing[5] + "', '" + typing[6] + "'); ");
     }
   }
-}
+  void PDetect() {
 
-
-
-
-
-
-
-/*
- 
- if(db.query("SELECT * FROM Users WHERE Username = '" + typing[5] + "'"){
- signup = false;
- } else {
- db.query("INSERT INTO Users(Username, Password) VALUES ('" + typing[5] + "', \"Hale\"); ");
- }
- }
- }
- }
- */
+    if(signup){
+      
+        if (typing[6].equals(typing[7]) && typing[6].length()>0 && typing[7].length()>0) {
+          detect = true;
+        } else {
+          detect = false;
+          println("No password or Password are not identical");
+        }
+      }
+    }
+  }

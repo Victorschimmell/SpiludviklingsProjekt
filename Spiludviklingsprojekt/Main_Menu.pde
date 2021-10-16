@@ -3,6 +3,7 @@
 float bgColor = 190;
 boolean bgChange = true;
 boolean signup = false;
+boolean detect = false;
 
 void drawMenu() {
 
@@ -315,16 +316,22 @@ void mouseClicked() {
     } else if (mouseX>width/2-width/10 && mouseX<width/2+width/10 && mouseY>height/2-height/40+height/15*2 && mouseY<height/2+height/40+height/15*2 && scene == 3) {
       toggleWrite=7;
     } else if (mouseX>width/2-width/20 && mouseX<width/2+width/20 && mouseY>height/2-height/40+height/15*3 && mouseY<height/2+height/40+height/15*3 && scene == 3) {
+     
+      
       signup = true;  
-
+      Password3.PDetect();
       Username3.DB();
-
-      if (signup) {
-
-
-        scene = 0;
-      } else {
+      if(signup){
+        scene = 3;
+      }else{
         println("Username already exists");
+      }
+        
+      if (signup && detect) {
+        println("Account registered");
+        scene = 3;
+      } else {
+        println("Unsuccessful registration");
       }
     }
   }
