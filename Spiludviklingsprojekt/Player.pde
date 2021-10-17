@@ -53,12 +53,14 @@ class Player {
     if (retning == 1) {
       if(loginP1==true){
         text(P1, pos.x, pos.y-80);
+        text("P1", pos.x, pos.y-5);
       }else{
         text("P1", pos.x, pos.y-5);
       }
     } else if (retning ==2) {
       if(loginP2==true){
         text(P2, pos.x, pos.y-80);
+        text("P2", pos.x, pos.y-5);
       }else{
         text("P2", pos.x, pos.y-5);
       }
