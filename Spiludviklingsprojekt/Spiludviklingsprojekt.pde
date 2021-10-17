@@ -58,8 +58,6 @@ typing Username3 = new typing(0, 0, 5);
 typing Password3 = new typing(0, height/15, 6);
 typing Password4 = new typing(0, height/15*2, 7);
 
-boolean P1_login = false;
-boolean P2_login = false;
 String P1;
 String P2;
 

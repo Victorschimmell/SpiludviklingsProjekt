@@ -51,13 +51,13 @@ class Player {
     fill(255);
     textSize(30);
     if (retning == 1) {
-      if(P1_login==true){
+      if(loginP1==true){
         text(P1, pos.x, pos.y-80);
       }else{
         text("P1", pos.x, pos.y-5);
       }
     } else if (retning ==2) {
-      if(P2_login==true){
+      if(loginP2==true){
         text(P2, pos.x, pos.y-80);
       }else{
         text("P2", pos.x, pos.y-5);
