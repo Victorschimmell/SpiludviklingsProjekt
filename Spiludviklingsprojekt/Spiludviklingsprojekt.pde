@@ -84,8 +84,6 @@ void setup() {
   Username3 = new typing(0, 0, 5);
   Password3 = new typing(0, height/15, 6);
   Password4 = new typing(0, height/15*2, 7);
-  
-  
 }
 void draw() {
   ///////////////////Scene selection///////////////////
@@ -117,13 +115,15 @@ void draw() {
 void keyPressed() {
   pressed[keyCode] = true;
 
-  Username1.typeText();
-  Password1.typeText();
-  Username2.typeText();
-  Password2.typeText();
-  Username3.typeText();
-  Password3.typeText();
-  Password4.typeText();
+  if ( scene == 0 || scene == 3) {
+    Username1.typeText();
+    Password1.typeText();
+    Username2.typeText();
+    Password2.typeText();
+    Username3.typeText();
+    Password3.typeText();
+    Password4.typeText();
+  }
 }
 
 void keyReleased() {

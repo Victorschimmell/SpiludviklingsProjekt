@@ -86,6 +86,8 @@ class typing {
   }
 }
 
+/////// HASHING ///////////
+
 String testkode(String inputTekst){
   try {
     //Vha. MessageDigest kan vi anvende en hashing algoritme.... her SHA-256 ...
