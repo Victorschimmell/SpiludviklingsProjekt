@@ -28,6 +28,8 @@ class hBox {
     rect(pos.x, pos.y+5+textDescent(), textWidth(indhold)+5, -(10+(textAscent())));
     fill(1, gradiant);
     text(indhold, pos.x, pos.y);
-    }
-    
+
+    textAlign(CENTER, CENTER);
+    rectMode(CENTER);
   }
+}
