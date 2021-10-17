@@ -314,8 +314,10 @@ void mouseClicked() {
 
 
       println("Log1");
+      
       Username1.Log(1);
       if (loginP1) {
+        P1 = Username1.typing[1];
         println("Player 1 logged in");
         hBoxes.add( new hBox("Player 1 logged in"));
       } else {
@@ -336,6 +338,7 @@ void mouseClicked() {
 
       Username2.Log(2);
       if (loginP2) {
+        P2 = Username2.typing[3];
         println("Player 2 logged in");
         hBoxes.add( new hBox("Player 2 logged in"));
       } else {
