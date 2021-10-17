@@ -19,7 +19,7 @@ class hBox {
   }
 
   void display() {
-    textSize(42);
+    textSize(54);
     textAlign(CORNER, RIGHT);
     rectMode(CORNER);
     gradiant-=0.1;
