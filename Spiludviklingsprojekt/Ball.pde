@@ -56,16 +56,16 @@ class Ball {
         println("Player 2 scored!");
       }
     }
-    if(scoreP1==endScore){
-      scene=0;
+    if (scoreP1==endScore) {
       resetGame();
       lastWinner="Player 1";
       println("Player 1 won the game");
-    }else if(scoreP2==endScore){
       scene=0;
+    } else if (scoreP2==endScore) {
       resetGame();
       lastWinner="Player 2";  
       println("Player 2 won the game");
+      scene=0;
     }
   }
 
@@ -89,7 +89,7 @@ class Ball {
     }
 
     if (doOnce) {
-      if(vel.y<-2){
+      if (vel.y<-2) {
         systems.add(new ParticleSystem(pos.x, pos.y+r, color(252, 15, 192)));
       }
     }

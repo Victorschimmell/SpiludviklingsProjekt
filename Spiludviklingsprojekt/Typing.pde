@@ -106,7 +106,7 @@ String testkode(String inputTekst){
     for (byte b : byteList)hashedValueBuffer.append(hex(b)); 
 
     //Her udskrives den oprindelige tekst
-    println("Den orindelige tekst: "+ inputTekst);
+    println("Den oprindelige tekst: "+ inputTekst);
     //Her udskrives "hash-værdien" af teksten
     
     println("SHA-256 værdien af teksten: " +hashedValueBuffer.toString());
