@@ -84,7 +84,16 @@ class typing {
       }
     }
   }
-}
+
+void leaderboard(){
+    if(db.connect()) {
+            db.query("SELECT * FROM Users ORDER BY Wins DESC");;
+      while(db.next())
+      println("Score " + db.getString("Username") + "-" + db.getString("Wins") + " Wins");
+      }
+    }
+  }
+            
 
 /////// HASHING ///////////
 

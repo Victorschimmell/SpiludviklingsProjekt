@@ -68,6 +68,7 @@ class Ball {
         println("Player 1 won the game");
             hBoxes.add( new hBox("Player 1 won the game"));
         resetGame();
+        Username3.leaderboard();
         scene=0;        
       
     
@@ -84,6 +85,7 @@ class Ball {
           println("Player 2 won the game");
           hBoxes.add( new hBox("Player 2 won the game"));
           resetGame();
+          Username3.leaderboard();
           scene=0;
         
         }
