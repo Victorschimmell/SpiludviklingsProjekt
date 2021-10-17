@@ -49,11 +49,21 @@ class Player {
 
 
     fill(255);
-    textSize(42);
+    textSize(30);
     if (retning == 1) {
-      text("P1", pos.x, pos.y-5);
+      if(loginP1==true){
+        text(P1, pos.x, pos.y-80);
+        text("P1", pos.x, pos.y-5);
+      }else{
+        text("P1", pos.x, pos.y-5);
+      }
     } else if (retning ==2) {
-      text("P2", pos.x, pos.y-5);
+      if(loginP2==true){
+        text(P2, pos.x, pos.y-80);
+        text("P2", pos.x, pos.y-5);
+      }else{
+        text("P2", pos.x, pos.y-5);
+      }
     }
     strokeWeight(1);
 
