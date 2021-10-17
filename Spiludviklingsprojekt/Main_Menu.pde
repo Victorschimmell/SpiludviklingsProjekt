@@ -280,7 +280,7 @@ void mousePressed() {
         resetGame();
       } else if (scene==3) {
         Username3.typing[5] = "";
-        Password3.typing[6] = "";
+        Password3.typing[6] = ""; 
         Password4.typing[7] = "";
         Password3.tPassword[6] = "";
         Password4.tPassword[7] = "";

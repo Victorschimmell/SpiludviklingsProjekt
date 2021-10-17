@@ -221,6 +221,7 @@ void resetGame() {
   scoreP2 = 0;
   println("Game has been reset.");
 }
+
 void loginReady() {
   if (loginP1 && loginP2) {
     loginReady = true;
