@@ -6,7 +6,7 @@ boolean signup = false;
 boolean detect = false;
 
 void drawMenu() {
-
+  loginReady();
   updateBackground();
   signup = false;
   //Knapper
@@ -256,7 +256,11 @@ void mousePressed() {
   int tri=width/30;
   if (scene==0) {
     if (mouseX>width/2-width/10 && mouseX<width/2+width/10 && mouseY>height/2-height/16 && mouseY<height/2+height/16 && scene == 0) {
-      scene=1;
+      if (loginP1 && loginP2) {
+        scene=1;
+      } else {
+        println("Both users have to be logged in to start game");
+      }
     } else if (mouseX>width/2-width/10 && mouseX<width/2+width/10 && mouseY>height/2-height/16+height/8*1.2 && mouseY<height/2+height/16+height/8*1.2) {
       scene=2;
     } else if (mouseX>width/2-width/10 && mouseX<width/2+width/10 && mouseY>height/2-height/16+height/8*1.2*2 && mouseY<height/2+height/16+height/8*1.2*2) {
@@ -303,30 +307,55 @@ void mouseClicked() {
   if (scene==0 || scene==3) {
     if (mouseX>(width/2-(width/4+width/10-width/20))-width/10 && mouseX<(width/2-(width/4+width/10-width/20))+width/10 && mouseY>height/2-height/40 && mouseY<height/2+height/40 && scene == 0) {
       toggleWrite =1;
+
+      //LOGIN BUTTON 1//
+    } else if (mouseX>width/2-(width/4+width/10-width/20)-width/30 && mouseX<width/2-(width/4+width/10-width/20)+width/30 && mouseY>height/2+height/15*2-height/40 && mouseY<height/2+height/15*2+height/40 && scene == 0) {
+
+
+      println("Log1");
+      Username1.Log(1);
+      if (loginP1) {
+        println("Player 1 logged in");
+      } else {
+        println("Username or Password is incorrect");
+        println(loginP1);
+      }
     } else if (mouseX>(width/2-(width/4+width/10-width/20))-width/10 && mouseX<(width/2-(width/4+width/10-width/20))+width/10 && mouseY>height/2+height/15-height/40 && mouseY<height/2+height/15+height/40 && scene == 0) {
       toggleWrite=2;
     } else if (mouseX>(width/2+width/4+width/10-width/20)-width/10 && mouseX<(width/2+width/4+width/10-width/20)+width/10 && mouseY>height/2-height/40 && mouseY<height/2+height/40 && scene == 0) {
       toggleWrite=3;
     } else if (mouseX>(width/2+width/4+width/10-width/20)-width/10 && mouseX<(width/2+width/4+width/10-width/20)+width/10 && mouseY>height/2+height/15-height/40 && mouseY<height/2+height/15+height/40 && scene == 0) {
       toggleWrite=4;
+
+      //LOGIN BUTTON 2//
+    } else if (mouseX>width/2+(width/4+width/10-width/20)-width/30 && mouseX<width/2+(width/4+width/10-width/20)+width/30 && mouseY>height/2+height/15*2-height/40 && mouseY<height/2+height/15*2+height/40 && scene == 0) {
+      println("log2");
+
+      Username2.Log(2);
+      if (loginP2) {
+        println("Player 2 logged in");
+      } else {
+        println("Username or Password is incorrect");
+        println(loginP2);
+      }
     } else if (mouseX>width/2-width/10 && mouseX<width/2+width/10 && mouseY>height/2-height/40 && mouseY<height/2+height/40 && scene == 3) {
       toggleWrite=5;
     } else if (mouseX>width/2-width/10 && mouseX<width/2+width/10 && mouseY>height/2-height/40+height/15 && mouseY<height/2+height/40+height/15 && scene == 3) {
       toggleWrite=6;
     } else if (mouseX>width/2-width/10 && mouseX<width/2+width/10 && mouseY>height/2-height/40+height/15*2 && mouseY<height/2+height/40+height/15*2 && scene == 3) {
       toggleWrite=7;
+
+      //SIGNUP BUTTON//
     } else if (mouseX>width/2-width/20 && mouseX<width/2+width/20 && mouseY>height/2-height/40+height/15*3 && mouseY<height/2+height/40+height/15*3 && scene == 3) {
-     
-      
       signup = true;  
       Password3.PDetect();
       Username3.DB();
-      if(signup){
+      if (signup) {
         scene = 3;
-      }else{
+      } else {
         println("Username already exists");
       }
-        
+
       if (signup && detect) {
         println("Account registered");
         scene = 3;
