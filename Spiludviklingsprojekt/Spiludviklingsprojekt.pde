@@ -107,6 +107,7 @@ void draw() {
   //FPS, så du kan se hvor dårlig din computer er.
   textSize(12);
   text(round(frameRate) + " FPS", width-50*displayDensity(), 50*displayDensity());
+  
 }
 
 
@@ -169,6 +170,7 @@ void drawScore() {
   fill(255, 255, 255);
   textSize(20);
   text("First to "+endScore, width/2, height/12);
+  
 }
 
 ///////////////////udregner collision mellem 2 obejkter///////////////////

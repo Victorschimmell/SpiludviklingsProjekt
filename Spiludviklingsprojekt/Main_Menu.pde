@@ -66,7 +66,12 @@ void drawMenu() {
     textSize(35);
     text("Last winner: "+lastWinner, 0, -(height/8));
   }
-
+////////Sign up///////
+fill(80);
+ String s = "Don't have an account?";
+    textSize(12);
+    text(s,width/10-750,height/20-420);
+    
   ///////////////////Login//////////////////
   fill(0, 0, 0, 70);
   textSize(32);
