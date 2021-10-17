@@ -304,6 +304,7 @@ void mousePressed() {
 
 //Login Userinterface
 void mouseClicked() {
+  
   if (scene==0 || scene==3) {
     if (mouseX>(width/2-(width/4+width/10-width/20))-width/10 && mouseX<(width/2-(width/4+width/10-width/20))+width/10 && mouseY>height/2-height/40 && mouseY<height/2+height/40 && scene == 0) {
       toggleWrite =1;
@@ -316,8 +317,10 @@ void mouseClicked() {
       Username1.Log(1);
       if (loginP1) {
         println("Player 1 logged in");
+        hBoxes.add( new hBox("Player 1 logged in"));
       } else {
         println("Username or Password is incorrect");
+        hBoxes.add( new hBox("Username or Password is incorrect"));
         println(loginP1);
       }
     } else if (mouseX>(width/2-(width/4+width/10-width/20))-width/10 && mouseX<(width/2-(width/4+width/10-width/20))+width/10 && mouseY>height/2+height/15-height/40 && mouseY<height/2+height/15+height/40 && scene == 0) {
@@ -334,8 +337,10 @@ void mouseClicked() {
       Username2.Log(2);
       if (loginP2) {
         println("Player 2 logged in");
+        hBoxes.add( new hBox("Player 2 logged in"));
       } else {
         println("Username or Password is incorrect");
+        hBoxes.add( new hBox("Username or Password is incorrect"));
         println(loginP2);
       }
     } else if (mouseX>width/2-width/10 && mouseX<width/2+width/10 && mouseY>height/2-height/40 && mouseY<height/2+height/40 && scene == 3) {
@@ -354,13 +359,16 @@ void mouseClicked() {
         scene = 3;
       } else {
         println("Username already exists");
+        hBoxes.add( new hBox("Username already exists"));
       }
 
       if (signup && detect) {
         println("Account registered");
+        hBoxes.add( new hBox("Account registered"));
         scene = 0;
       } else {
         println("Unsuccessful registration");
+        hBoxes.add( new hBox("Unsuccessful registration"));
       }
     }
   }

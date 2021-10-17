@@ -20,6 +20,9 @@ ArrayList<Particle> particles;
 ArrayList<ParticleSystem> systems;
 int P_antal = 100; // mængfde af particles
 
+
+ArrayList<hBox> hBoxes;
+
 //Text
 PFont font;
 PFont mono;
@@ -69,6 +72,7 @@ void setup() {
   textAlign(CENTER, CENTER);
   ///////////////////Andet///////////////////
   systems = new ArrayList<ParticleSystem>();
+  hBoxes = new ArrayList<hBox>();
   ball = new Ball();
 
   player1 = new Player(1);
@@ -84,9 +88,11 @@ void setup() {
   Username3 = new typing(0, 0, 5);
   Password3 = new typing(0, height/15, 6);
   Password4 = new typing(0, height/15*2, 7);
+ 
 }
 void draw() {
   ///////////////////Scene selection///////////////////
+  
 
   if ( scene == 0) {
     drawMenu();
@@ -108,6 +114,13 @@ void draw() {
   textSize(12);
   text(round(frameRate) + " FPS", width-50*displayDensity(), 50*displayDensity());
   
+
+    for (hBox HB : hBoxes)
+  {
+    HB.display();
+  }
+  
+
 }
 
 

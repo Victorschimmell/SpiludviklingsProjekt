@@ -66,6 +66,7 @@ class Ball {
             db.query("UPDATE Users SET Wins =((SELECT Wins FROM Users WHERE Username='" + Username1.typing[1] + "') + 1) WHERE Username='" + Username1.typing[1] + "' ");
       println(db.getString(("SELECT Wins FROM Users WHERE Username='" + Username1.typing[1] + "'")));
         println("Player 1 won the game");
+            hBoxes.add( new hBox("Player 1 won the game"));
         resetGame();
         scene=0;        
       
@@ -81,6 +82,7 @@ class Ball {
             db.query("UPDATE Users SET Wins =((SELECT Wins FROM Users WHERE Username='" + Username2.typing[3] + "') + 1) WHERE Username='" + Username2.typing[3] + "' ");;
 
           println("Player 2 won the game");
+          hBoxes.add( new hBox("Player 2 won the game"));
           resetGame();
           scene=0;
         
