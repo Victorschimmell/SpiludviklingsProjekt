@@ -1,4 +1,5 @@
 import de.bezier.data.sql.*;
+import java.security.*;
 ///////////////////Variabel//////////////////
 //Database
 SQLite db;
@@ -83,6 +84,8 @@ void setup() {
   Username3 = new typing(0, 0, 5);
   Password3 = new typing(0, height/15, 6);
   Password4 = new typing(0, height/15*2, 7);
+  
+  
 }
 void draw() {
   ///////////////////Scene selection///////////////////

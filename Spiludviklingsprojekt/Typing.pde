@@ -40,7 +40,9 @@ class typing {
         signup = false;
     }
     if (signup && detect) {
-      db.query("INSERT INTO Users(Username, Password) VALUES ('" + typing[5] + "', '" + typing[6] + "'); ");
+
+
+      db.query("INSERT INTO Users(Username, Password) VALUES ('" + typing[5] + "', '" + testkode(typing[6]) + "'); ");
     }
   }
   void PDetect() {
@@ -59,7 +61,7 @@ class typing {
 
     if (db.connect()) {
       if (nr == 1) {
-        db.query("SELECT Username FROM Users WHERE Username='" + typing[1] + "' AND Password='" + typing[2] + "'");
+        db.query("SELECT Username FROM Users WHERE Username='" + typing[1] + "' AND Password='" + testkode(typing[2]) + "'");
 
         if (db.next()) {
           println("Working login 1");
@@ -70,7 +72,7 @@ class typing {
       }
 
       if (nr == 2) {
-        db.query("SELECT Username FROM Users WHERE Username='" + typing[3] + "' AND Password='" + typing[4] + "'");
+        db.query("SELECT Username FROM Users WHERE Username='" + typing[3] + "' AND Password='" + testkode(typing[4]) + "'");
 
         if (db.next()) {
           println("Working login 2");
@@ -81,5 +83,38 @@ class typing {
         }
       }
     }
+  }
+}
+
+String testkode(String inputTekst){
+  try {
+    //Vha. MessageDigest kan vi anvende en hashing algoritme.... her SHA-256 ...
+    //prøv f.eks. MD5 og se om du kan bryde den ved at søge på nettet!
+    MessageDigest md = MessageDigest.getInstance("SHA-256"); 
+
+    //MassageDigest objektet "fodres" med teksten, der skal "hashes"
+    md.update(inputTekst.getBytes());    
+
+    //digest funktionen giver "hash-værdien", men i hexadecimale bytes 
+    byte[] byteList = md.digest();
+
+    //Her anvendes processings hex funktion, der kan konvertere hexadecimale bytes til Strings
+    //så det er muligt at læse "hash-værdien"
+    StringBuffer hashedValueBuffer = new StringBuffer();
+    for (byte b : byteList)hashedValueBuffer.append(hex(b)); 
+
+    //Her udskrives den oprindelige tekst
+    println("Den orindelige tekst: "+ inputTekst);
+    //Her udskrives "hash-værdien" af teksten
+    
+    println("SHA-256 værdien af teksten: " +hashedValueBuffer.toString());
+    
+    
+    return hashedValueBuffer.toString();
+  }
+
+  catch (Exception e) {
+    System.out.println("Exception: "+e);
+    return "";
   }
 }
