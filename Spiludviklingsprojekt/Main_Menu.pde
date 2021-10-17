@@ -358,7 +358,7 @@ void mouseClicked() {
 
       if (signup && detect) {
         println("Account registered");
-        scene = 3;
+        scene = 0;
       } else {
         println("Unsuccessful registration");
       }
