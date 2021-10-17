@@ -266,11 +266,7 @@ void mousePressed() {
     } else if (mouseX>width/2-width/10 && mouseX<width/2+width/10 && mouseY>height/2-height/16+height/8*1.2*2 && mouseY<height/2+height/16+height/8*1.2*2) {
       exit();
     } else if (mouseX>width/16-width/26 && mouseX<width/16+width/26 && mouseY>height/14-height/40 && mouseY<height/14+height/40 && scene == 0) {
-      Username3.typing[5] = "";
-      Password3.typing[6] = ""; 
-      Password4.typing[7] = "";
-      Password3.tPassword[6] = "";
-      Password4.tPassword[7] = "";
+
       scene=3;
     }
   } else if (scene==1 || scene==3) {
