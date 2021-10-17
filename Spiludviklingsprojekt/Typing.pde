@@ -39,7 +39,7 @@ class typing {
       while (db.next())
         signup = false;
     }
-    if (signup && detect) {
+    if (signup && detect && typing[5].length()>0 ) {
 
 
       db.query("INSERT INTO Users(Username, Password, Wins) VALUES ('" + typing[5] + "', '" + testkode(typing[6]) + "' , \"0\"); ");
@@ -49,7 +49,7 @@ class typing {
 
     if (signup) {
 
-      if (typing[6].equals(typing[7]) && typing[6].length()>0 && typing[7].length()>0) {
+      if (typing[6].equals(typing[7]) && typing[6].length()>0 && typing[7].length()>0 && typing[5].length()>0) {
         detect = true;
       } else {
         detect = false;
