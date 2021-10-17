@@ -42,7 +42,7 @@ class typing {
     if (signup && detect) {
 
 
-      db.query("INSERT INTO Users(Username, Password) VALUES ('" + typing[5] + "', '" + testkode(typing[6]) + "'); ");
+      db.query("INSERT INTO Users(Username, Password, Wins) VALUES ('" + typing[5] + "', '" + testkode(typing[6]) + "' , \"0\"); ");
     }
   }
   void PDetect() {

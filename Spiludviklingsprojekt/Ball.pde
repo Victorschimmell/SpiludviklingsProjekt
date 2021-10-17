@@ -57,17 +57,37 @@ class Ball {
       }
     }
     if (scoreP1==endScore) {
-      resetGame();
+
       lastWinner="Player 1";
-      println("Player 1 won the game");
-      scene=0;
-    } else if (scoreP2==endScore) {
-      resetGame();
-      lastWinner="Player 2";  
-      println("Player 2 won the game");
-      scene=0;
+
+      if (db.connect()) {
+
+
+            db.query("UPDATE Users SET Wins =((SELECT Wins FROM Users WHERE Username='" + Username1.typing[1] + "') + 1) WHERE Username='" + Username1.typing[1] + "' ");
+      println(db.getString(("SELECT Wins FROM Users WHERE Username='" + Username1.typing[1] + "'")));
+        println("Player 1 won the game");
+        resetGame();
+        scene=0;        
+      
+    
+
+  } 
+      } else if (scoreP2==endScore) {
+      
+        lastWinner="Player 2";
+
+        if (db.connect()) {
+
+            db.query("UPDATE Users SET Wins =((SELECT Wins FROM Users WHERE Username='" + Username2.typing[3] + "') + 1) WHERE Username='" + Username2.typing[3] + "' ");;
+
+          println("Player 2 won the game");
+          resetGame();
+          scene=0;
+        
+        }
+      }
     }
-  }
+  
 
   ///////////////////UPDATE BOLD VÆRDIER///////////////////
   void update() { // opdaterer position på bold fordi den skal kunne bevæge sig.
